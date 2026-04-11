@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stitch</title>
+</head>
+
+<body>
+
+  <!-- ! HEADER -->
+  <header class="st-header">
+    <a href="#" class="st-header__logo">
+      Stitch
+    </a>
+    <nav class="st-header__nav">
+      <a href="" class="st-header__link">Docs</a>
+      <a href="" class="st-header__link">Components</a>
+      <a href="" class="st-header__link">Themes</a>
+      <a href="" class="st-header__link">GitHub</a>
+    </nav>
+    <div class="st-header__config">
+      <div class="st-header__lang">
+        <button class="st-header__button">EN</button>
+        <button class="st-header__button">FR</button>
+      </div>
+      <button class="st-header__button">npx stitch init</button>
+    </div>
+  </header>
+
+  <!-- ! MAIN -->
+  <main class="st-main">
+
+    <!-- ! HERO -->
+    <section class="st-hero">
+      <h1 class="st-hero__tile">Stitch</h1>
+      <p class="st-hero__version">
+      <span class="st-hero__dot"></span>v0.1.0
+      </p>
+      <h2 class="st-hero__catchphrase">
+        A design system <span class="st-hero__catchphrase--highlight">you actually own</span>
+      </h2>
+      <p class="st-hero__subtitle">
+        Accessible HTML/CSS components, WCAG-validated themes, and a CLI that copies the source straight into your
+        project. Zero runtime dependencies.
+      </p>
+      <!-- ! CTA -->
+      <div class="st-hero__cta">
+        <a href="#" class="st-hero__btn st-hero__btn--primary">Get Started</a>
+        <a href="#" class="st-hero__btn st-hero__btn--secondary">Browse components</a>
+      </div>
+
+      <!-- ! CLI DEMO -->
+      <div class="st-hero__cli">
+        <p class="st-hero__addcommand">npx stitch add button</p>
+        <p class="st-hero__prompt">
+          <span class="st-hero__icon st-hero__icon--info">
+            <i data-lucide="CircleQuestionMark"></i>
+          </span>
+          Which variants ?
+          <span class="st-hero__choices">
+            primary, secondary, ghost
+          </span>
+        </p>
+        <p class="st-hero__prompt">
+          <span class="st-hero__icon st-hero__icon--info">
+            <i data-lucide="CircleQuestionMark"></i>
+          </span>
+          Where to copy the file ?
+          <span class="st-hero__choices">
+            ./src/styles/components/
+          </span>
+        </p>
+        <p class="st-hero__prompt">
+          <span class="st-hero__icon st-hero__icon--info">
+            <i data-lucide="CircleQuestionMark"></i>
+          </span>
+          Include behavioral JS ?
+          <span class="st-hero__choices">
+            no
+          </span>
+        </p>
+        <p class="st-hero__prompt">
+          <span class="st-hero__icon st-hero__icon--success">
+            <i data-lucide="Check"></i>
+          </span>
+          Button.scss copied to ./src/styles/components/ with primary, secondary and ghost variants.
+        </p>
+      </div>
+    </section>
+
+    <!-- ! FEATURES -->
+    <section class="st-features">
+      <h2 class="st-features__title">Features</h2>
+      <div class="st-features__list">
+        <div class="st-feature">
+          <i data-lucide="ListFilter" class="st-feature__icon"></i>
+          <h3 class="st-feature__title">Your code, your rules</h3>
+          <p class="st-feature__description">
+            The CLI copies the source into your project. Tweak everything - no abstraction layer, no friction.
+          </p>
+        </div>
+        <div class="st-feature">
+          <i data-lucide="LayoutGrid" class="st-feature__icon"></i>
+          <h3 class="st-feature__title">Framework-agnostic</h3>
+          <p class="st-feature__description">
+            HTML, React, Vue, Svelte - CSS doesn't care. Drop it anywhere and it just works.
+          </p>
+        </div>
+        <div class="st-feature">
+          <i data-lucide="CircleCheck" class="st-feature__icon"></i>
+          <h3 class="st-feature__title">Accessible by default</h3>
+          <p class="st-feature__description">
+            Every theme ships WCAG AA compliant. Live contrast scoring in the configurator guides you toward AAA.
+          </p>
+        </div>
+        <div class="st-feature">
+          <i data-lucide="ArrowUp" class="st-feature__icon"></i>
+          <h3 class="st-feature__title">Token-first architecture</h3>
+          <p class="st-feature__description">
+            Palette ➜ semantic ➜ component. Swap a theme by switching one class on your root element.
+          </p>
+        </div>
+        <div class="st-feature">
+          <i data-lucide="ChartNoAxesCombined" class="st-feature__icon"></i>
+          <h3 class="st-feature__title">Built to teach</h3>
+          <p class="st-feature__description">
+            Every component documents its own choices - tokens used, responsive behavior, keyboard shortcuts.
+          </p>
+        </div>
+        <div class="st-feature">
+          <i data-lucide="WandSparkles" class="st-feature__icon"></i>
+          <h3 class="st-feature__title">Animation library</h3>
+          <p class="st-feature__description">
+            Optional CSS/JS animations. prefers-reduced-motion respected. Install only what you need. (coming soon)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ! THEMES -->
+     <section class="st-themes">
+      <h2 class="st-themes__title">Themes</h2>
+      <div class="st-themes__list">
+        <div class="st-theme st-theme--aurora">
+          <div class="st-theme__previews">
+            <div class="st-theme__preview st-theme__preview--primary"></div>
+            <div class="st-theme__preview st-theme__preview--secondary"></div>
+          </div>
+          <h3 class="st-theme__name">Aurora</h3>
+        </div>
+        <div class="st-theme st-theme--slate">
+          <div class="st-theme__previews">
+            <div class="st-theme__preview st-theme__preview--primary"></div>
+            <div class="st-theme__preview st-theme__preview--secondary"></div>
+          </div>
+          <h3 class="st-theme__name">Slate</h3>
+        </div>
+        <div class="st-theme st-theme--ember">
+          <div class="st-theme__previews">
+            <div class="st-theme__preview st-theme__preview--primary"></div>
+            <div class="st-theme__preview st-theme__preview--secondary"></div>
+          </div>
+          <h3 class="st-theme__name">Ember</h3>
+        </div>
+        <div class="st-theme st-theme--forest">
+          <div class="st-theme__previews">
+            <div class="st-theme__preview st-theme__preview--primary"></div>
+            <div class="st-theme__preview st-theme__preview--secondary"></div>
+          </div>
+          <h3 class="st-theme__name">Forest</h3>
+        </div>
+      </div>
+      <div class="st-accessibility">
+        <h3 class="st-accessibility__title">
+          <span class="st-accessibility__icon">
+            <i data-lucide="Clock"></i>
+          </span>
+          Accessibility scores - <span class="st-accessibility__theme-name" id="theme-name">Aurora</span> theme
+        </h3>
+        <div class="st-accessibility__badges">
+          <div class="st-badge st-badge--success">
+            <i data-lucide="CircleCheck"></i>
+            Contrast 7.2:1 AAA
+          </div>
+          <div class="st-badge st-badge--success">
+            <i data-lucide="CircleCheck"></i>
+            Focus ring 4.1:1
+          </div>
+          <div class="st-badge st-badge--success">
+            <i data-lucide="CircleCheck"></i>
+            Line-height: 1.6
+          </div>
+          <div class="st-badge st-badge--warning">
+            <i data-lucide="CircleAlert"></i>
+            Touch target 38px - optimize ?
+          </div>
+        </div>
+      </div>
+     </section>
+
+     <!-- ! GET STARTED -->
+    <section class="st-start">
+      <h2 class="st-start__title">
+        Get started in 3 steps
+      </h2>
+      <div class="st-start__steps">
+        <div class="st-step">
+          <span class="st-step__count">01</span>
+          <span class="st-step__action">Initialize</span>
+          <code class="st-step__command">npx stitch init</code>
+        </div>
+        <div class="st-step">
+          <span class="st-step__count">02</span>
+          <span class="st-step__action">Pick a theme</span>
+          <code class="st-step__command">npx stitch theme aurora</code>
+        </div>
+        <div class="st-step">
+          <span class="st-step__count">03</span>
+          <span class="st-step__action">Add components</span>
+          <code class="st-step__command">npx stitch add button card modal</code>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ! FOOTER -->
+   <footer class="st-footer">
+    <p class="st-footer__name">Stitch</p>
+    <nav class="st-footer__nav">
+      <a href="#" class="st-footer__link">Docs</a>
+      <a href="#" class="st-footer__link">Components</a>
+      <a href="#" class="st-footer__link">npm</a>
+    </nav>
+   </footer>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+
+</html>

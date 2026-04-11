@@ -1,0 +1,86 @@
+:root,
+[data-theme="light"] {
+  --st-color-bg: #f7f6f2;
+  --st-color-surface: #f9f8f5;
+  --st-color-surface-2: #fbfbf9;
+  --st-color-surface-offset: #edeae5;
+  --st-color-border: #d4d1ca;
+  --st-color-divider: #dcd9d5;
+
+  --st-color-text: #28251d;
+  --st-color-text-muted: #7a7974;
+  --st-color-text-faint: #bab9b4;
+  --st-color-text-inverse: #f9f8f4;
+
+  --st-color-primary: #01696f;
+  --st-color-primary-hover: #0c4e54;
+  --st-color-primary-active: #0f3638;
+  --st-color-primary-hl: #cedcd8;
+
+  --st-color-success: #2d9e6b;
+  --st-color-success-hl: #d4f0e5;
+  --st-color-danger: #c94040;
+  --st-color-danger-hl: #fce8e8;
+  --st-color-warning: #c97d20;
+  --st-color-warning-hl: #fdf0dc;
+  --st-color-info: #2d6fa3;
+  --st-color-info-hl: #ddeef9;
+}
+
+[data-theme="dark"] {
+  --st-color-bg: #171614;
+  --st-color-surface: #1c1b19;
+  --st-color-surface-2: #201f1d;
+  --st-color-surface-offset: #22211f;
+  --st-color-border: #393836;
+  --st-color-divider: #262523;
+
+  --st-color-text: #cdccca;
+  --st-color-text-muted: #797876;
+  --st-color-text-faint: #5a5957;
+  --st-color-text-inverse: #2b2a28;
+
+  --st-color-primary: #4f98a3;
+  --st-color-primary-hover: #227f8b;
+  --st-color-primary-active: #1a626b;
+  --st-color-primary-hl: #313b3b;
+
+  --st-color-success: #3dbf82;
+  --st-color-success-hl: #1a3d2e;
+  --st-color-danger: #e05555;
+  --st-color-danger-hl: #3d1a1a;
+  --st-color-warning: #e09040;
+  --st-color-warning-hl: #3d2a10;
+  --st-color-info: #4a90c4;
+  --st-color-info-hl: #1a2d3d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --st-color-bg: #171614;
+    --st-color-surface: #1c1b19;
+    --st-color-surface-2: #201f1d;
+    --st-color-surface-offset: #22211f;
+    --st-color-border: #393836;
+    --st-color-divider: #262523;
+
+    --st-color-text: #cdccca;
+    --st-color-text-muted: #797876;
+    --st-color-text-faint: #5a5957;
+    --st-color-text-inverse: #2b2a28;
+
+    --st-color-primary: #4f98a3;
+    --st-color-primary-hover: #227f8b;
+    --st-color-primary-active: #1a626b;
+    --st-color-primary-hl: #313b3b;
+
+    --st-color-success: #3dbf82;
+    --st-color-success-hl: #1a3d2e;
+    --st-color-danger: #e05555;
+    --st-color-danger-hl: #3d1a1a;
+    --st-color-warning: #e09040;
+    --st-color-warning-hl: #3d2a10;
+    --st-color-info: #4a90c4;
+    --st-color-info-hl: #1a2d3d;
+  }
+}

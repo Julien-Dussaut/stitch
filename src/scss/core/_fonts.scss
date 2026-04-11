@@ -1,0 +1,16 @@
+// -----------------------------------------------------------------------------
+// Fonts — Stitch
+// Charge les polices via Google Fonts et expose les variables de fonte.
+// Ces variables sont déclarées dans _tokens.scss et surchargées ici.
+// -----------------------------------------------------------------------------
+
+// Google Fonts import
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+// Font variables
+// Surcharge les valeurs déclarées dans _tokens.scss
+:root {
+  --st-font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
+  --st-font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --st-font-mono:    'JetBrains Mono', 'Courier New', monospace;
+}

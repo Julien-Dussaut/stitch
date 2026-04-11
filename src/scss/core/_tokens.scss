@@ -1,0 +1,44 @@
+:root {
+  // Typography
+  --st-font-body: system-ui, sans-serif;
+  --st-font-display: system-ui, sans-serif;
+
+  --st-text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --st-text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --st-text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --st-text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --st-text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --st-text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --st-text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+
+  // Spacing
+  --st-space-1:  0.25rem;
+  --st-space-2:  0.5rem;
+  --st-space-3:  0.75rem;
+  --st-space-4:  1rem;
+  --st-space-6:  1.5rem;
+  --st-space-8:  2rem;
+  --st-space-12: 3rem;
+  --st-space-16: 4rem;
+  --st-space-24: 6rem;
+
+  // Radius
+  --st-radius-sm:   0.375rem;
+  --st-radius-md:   0.5rem;
+  --st-radius-lg:   0.75rem;
+  --st-radius-xl:   1rem;
+  --st-radius-full: 9999px;
+
+  // Transitions
+  --st-transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  // Shadows
+  --st-shadow-sm: 0 1px 2px oklch(0.2 0.01 80 / 0.06);
+  --st-shadow-md: 0 4px 12px oklch(0.2 0.01 80 / 0.08);
+  --st-shadow-lg: 0 12px 32px oklch(0.2 0.01 80 / 0.12);
+
+  // Layout
+  --st-content-narrow:  640px;
+  --st-content-default: 960px;
+  --st-content-wide:    1200px;
+}

@@ -1,0 +1,58 @@
+body {
+  min-height: 100dvh;
+  font-family: var(--sm-font-body);
+  font-size: var(--sm-text-base);
+  line-height: 1.6;
+  color: var(--sm-color-text);
+  background-color: var(--sm-color-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--sm-font-display);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+p, li, figcaption {
+  text-wrap: pretty;
+  max-width: 72ch;
+}
+
+::selection {
+  background: oklch(from var(--sm-color-primary) l c h / 0.2);
+  color: var(--sm-color-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--sm-color-primary);
+  outline-offset: 3px;
+  border-radius: var(--sm-radius-sm);
+}
+
+a, button, [role="button"] {
+  transition:
+    color var(--sm-transition),
+    background var(--sm-transition),
+    border-color var(--sm-transition),
+    box-shadow var(--sm-transition);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
