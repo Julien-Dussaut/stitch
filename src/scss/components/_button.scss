@@ -1,0 +1,51 @@
+.st-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--st-space-1) var(--st-space-4);
+  font-size: var(--st-text-xs);
+  border-radius: var(--st-radius-lg);
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: color var(--st-transition), background-color var(--st-transition), border-color var(--st-transition);
+
+  &--primary {
+    background-color: var(--st-color-primary);
+    color: var(--st-color-text-inverse);
+    &:hover {
+      background-color: var(--st-color-primary-hover);
+    }
+    &:active {
+      background-color: var(--st-color-primary-active);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: var(--st-color-primary);
+    border-color: var(--st-color-primary);
+    &:hover {
+      background-color: var(--st-color-primary-hover);
+      color: var(--st-color-text-inverse);
+      border-color: var(--st-color-text-inverse);
+    }
+    &:active {
+      color: var(--st-color-primary-hover);
+      border-color: var(--st-color-primary-hover);
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: var(--st-color-text-muted);
+    border-color: transparent;
+    &:hover {
+      background-color: var(--st-color-surface-offset);
+      color: var(--st-color-text);
+
+    }
+    &:active {
+      background-color: var(--st-color-border);
+    }
+  }
+}

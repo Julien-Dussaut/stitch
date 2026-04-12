@@ -1,14 +1,14 @@
 body {
   min-height: 100dvh;
-  font-family: var(--sm-font-body);
-  font-size: var(--sm-text-base);
+  font-family: var(--st-font-body);
+  font-size: var(--st-text-base);
   line-height: 1.6;
-  color: var(--sm-color-text);
-  background-color: var(--sm-color-bg);
+  color: var(--st-color-text);
+  background-color: var(--st-color-bg);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--sm-font-display);
+  font-family: var(--st-font-display);
   line-height: 1.15;
   text-wrap: balance;
 }
@@ -19,22 +19,22 @@ p, li, figcaption {
 }
 
 ::selection {
-  background: oklch(from var(--sm-color-primary) l c h / 0.2);
-  color: var(--sm-color-text);
+  background: oklch(from var(--st-color-primary) l c h / 0.2);
+  color: var(--st-color-text);
 }
 
 :focus-visible {
-  outline: 2px solid var(--sm-color-primary);
+  outline: 2px solid var(--st-color-primary);
   outline-offset: 3px;
-  border-radius: var(--sm-radius-sm);
+  border-radius: var(--st-radius-sm);
 }
 
 a, button, [role="button"] {
   transition:
-    color var(--sm-transition),
-    background var(--sm-transition),
-    border-color var(--sm-transition),
-    box-shadow var(--sm-transition);
+    color var(--st-transition),
+    background var(--st-transition),
+    border-color var(--st-transition),
+    box-shadow var(--st-transition);
 }
 
 @media (prefers-reduced-motion: reduce) {

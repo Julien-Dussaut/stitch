@@ -7,8 +7,11 @@
 @use 'core/utilities';
 
 // Components
-// @use 'components/button';
+@use 'components/button';
 // @use 'components/badge';
 
-// // Pages
-// @use 'pages/landing';
+// Pages
+@use 'pages/header';
+@use 'pages/hero';
+@use 'pages/features';
+@use 'pages/landing';

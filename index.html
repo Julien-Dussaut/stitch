@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
@@ -11,9 +11,11 @@
 
   <!-- ! HEADER -->
   <header class="st-header">
-    <a href="#" class="st-header__logo">
-      Stitch
-    </a>
+    <div class="st-header__logo">
+      <img src="./src/images/stitch-icon.svg" alt="Stitch icon" class="st-header__icon">
+      <span class="st-header__name">Stitch</span>
+    </div>
+
     <nav class="st-header__nav">
       <a href="" class="st-header__link">Docs</a>
       <a href="" class="st-header__link">Components</a>
@@ -22,10 +24,10 @@
     </nav>
     <div class="st-header__config">
       <div class="st-header__lang">
-        <button class="st-header__button">EN</button>
-        <button class="st-header__button">FR</button>
+        <button class="st-btn st-btn--primary">EN</button>
+        <button class="st-btn st-btn--ghost">FR</button>
       </div>
-      <button class="st-header__button">npx stitch init</button>
+      <a href="#get-started" class="st-btn st-btn--outline st-btn--mono">npx stitch init</a>
     </div>
   </header>
 
@@ -34,10 +36,14 @@
 
     <!-- ! HERO -->
     <section class="st-hero">
-      <h1 class="st-hero__tile">Stitch</h1>
       <p class="st-hero__version">
-      <span class="st-hero__dot"></span>v0.1.0
+        <span class="st-hero__dot"></span>v0.1.0 - open source
       </p>
+      <h1 class="st-hero__title">
+        Stitch
+        <img src="./src/images/stitch-icon.svg" alt="Stitch logo" class="st-hero__logo">
+      </h1>
+
       <h2 class="st-hero__catchphrase">
         A design system <span class="st-hero__catchphrase--highlight">you actually own</span>
       </h2>
@@ -47,8 +53,8 @@
       </p>
       <!-- ! CTA -->
       <div class="st-hero__cta">
-        <a href="#" class="st-hero__btn st-hero__btn--primary">Get Started</a>
-        <a href="#" class="st-hero__btn st-hero__btn--secondary">Browse components</a>
+        <a href="#" class="st-btn st-btn--primary">Get Started</a>
+        <a href="#" class="st-btn st-btn--outline">Browse components</a>
       </div>
 
       <!-- ! CLI DEMO -->
@@ -81,12 +87,13 @@
             no
           </span>
         </p>
-        <p class="st-hero__prompt">
+        <p class="st-hero__prompt st-hero__prompt--result">
           <span class="st-hero__icon st-hero__icon--success">
             <i data-lucide="Check"></i>
           </span>
-          Button.scss copied to ./src/styles/components/ with primary, secondary and ghost variants.
+          Button.scss copied to ./src/styles/components/ with primary, and ghost variants.
         </p>
+        <p class="st-hero__cursor"></p>
       </div>
     </section>
 
@@ -94,53 +101,65 @@
     <section class="st-features">
       <h2 class="st-features__title">Features</h2>
       <div class="st-features__list">
-        <div class="st-feature">
-          <i data-lucide="ListFilter" class="st-feature__icon"></i>
+        <div class="st-features__item">
+          <div class="st-feature__iconwrapper">
+            <i data-lucide="ListFilter" class="st-feature__icon"></i>
+          </div>
           <h3 class="st-feature__title">Your code, your rules</h3>
           <p class="st-feature__description">
             The CLI copies the source into your project. Tweak everything - no abstraction layer, no friction.
           </p>
         </div>
-        <div class="st-feature">
-          <i data-lucide="LayoutGrid" class="st-feature__icon"></i>
+        <div class="st-features__item">
+          <div class="st-feature__iconwrapper">
+            <i data-lucide="LayoutGrid" class="st-feature__icon"></i>
+          </div>
           <h3 class="st-feature__title">Framework-agnostic</h3>
           <p class="st-feature__description">
             HTML, React, Vue, Svelte - CSS doesn't care. Drop it anywhere and it just works.
           </p>
         </div>
-        <div class="st-feature">
-          <i data-lucide="CircleCheck" class="st-feature__icon"></i>
+        <div class="st-features__item">
+          <div class="st-feature__iconwrapper">
+            <i data-lucide="CircleCheck" class="st-feature__icon"></i>
+          </div>
           <h3 class="st-feature__title">Accessible by default</h3>
           <p class="st-feature__description">
             Every theme ships WCAG AA compliant. Live contrast scoring in the configurator guides you toward AAA.
           </p>
         </div>
-        <div class="st-feature">
-          <i data-lucide="ArrowUp" class="st-feature__icon"></i>
+        <div class="st-features__item">
+          <div class="st-feature__iconwrapper">
+            <i data-lucide="ArrowUp" class="st-feature__icon"></i>
+          </div>
           <h3 class="st-feature__title">Token-first architecture</h3>
           <p class="st-feature__description">
             Palette ➜ semantic ➜ component. Swap a theme by switching one class on your root element.
           </p>
         </div>
-        <div class="st-feature">
-          <i data-lucide="ChartNoAxesCombined" class="st-feature__icon"></i>
+        <div class="st-features__item">
+          <div class="st-feature__iconwrapper">
+            <i data-lucide="ChartNoAxesCombined" class="st-feature__icon"></i>
+          </div>
           <h3 class="st-feature__title">Built to teach</h3>
           <p class="st-feature__description">
             Every component documents its own choices - tokens used, responsive behavior, keyboard shortcuts.
           </p>
         </div>
-        <div class="st-feature">
-          <i data-lucide="WandSparkles" class="st-feature__icon"></i>
-          <h3 class="st-feature__title">Animation library</h3>
+        <div class="st-features__item">
+          <div class="st-feature__iconwrapper">
+            <i data-lucide="WandSparkles" class="st-feature__icon"></i>
+          </div>
+          <h3 class="st-feature__title">Animation library <span>(coming soon)</span></h3>
           <p class="st-feature__description">
-            Optional CSS/JS animations. prefers-reduced-motion respected. Install only what you need. (coming soon)
+            Optional CSS/JS animations. prefers-reduced-motion respected. Install only what you need.
           </p>
         </div>
       </div>
     </section>
 
     <!-- ! THEMES -->
-     <section class="st-themes">
+    <section class="st-themes">
       <h2 class="st-themes__title">Themes</h2>
       <div class="st-themes__list">
         <div class="st-theme st-theme--aurora">
@@ -198,10 +217,10 @@
           </div>
         </div>
       </div>
-     </section>
+    </section>
 
-     <!-- ! GET STARTED -->
-    <section class="st-start">
+    <!-- ! GET STARTED -->
+    <section id="get-started" class="st-start">
       <h2 class="st-start__title">
         Get started in 3 steps
       </h2>
@@ -226,14 +245,14 @@
   </main>
 
   <!-- ! FOOTER -->
-   <footer class="st-footer">
+  <footer class="st-footer">
     <p class="st-footer__name">Stitch</p>
     <nav class="st-footer__nav">
       <a href="#" class="st-footer__link">Docs</a>
       <a href="#" class="st-footer__link">Components</a>
       <a href="#" class="st-footer__link">npm</a>
     </nav>
-   </footer>
+  </footer>
   <script type="module" src="/src/js/main.js"></script>
 </body>
 

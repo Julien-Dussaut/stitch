@@ -1,0 +1,32 @@
+.st-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--st-space-1);
+  font-size: var(--st-text-sm);
+  padding: var(--st-space-1) var(--st-space-2);
+  border-radius: var(--st-radius-full);
+  &--success {
+    background-color: var(--st-color-success-bg);
+    color: var(--st-color-success-text);
+    border: 1px solid var(--st-color-success-border);
+  }
+  &--warning {
+    background-color: var(--st-color-warning-bg);
+    color: var(--st-color-warning-text);
+    border: 1px solid var(--st-color-warning-border);
+  }
+  &--danger {
+    background-color: var(--st-color-danger-bg);
+    color: var(--st-color-danger-text);
+    border: 1px solid var(--st-color-danger-border);  
+  }
+  &--info {
+    background-color: var(--st-color-info-bg);
+    color: var(--st-color-info-text);
+    border: 1px solid var(--st-color-info-border);  
+  }
+  svg {
+    width: var(--st-space-4);
+    height: var(--st-space-4);
+  }
+}

@@ -1,0 +1,86 @@
+@use '../core/breakpoints' as *;
+
+.st-features {
+
+  width: 90dvw;
+  margin: var(--st-space-6) auto var(--st-space-12);
+
+  &__title {
+    display: flex;
+    align-items: center;
+    font-size: var(--st-text-sm);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--st-color-text-muted);
+
+    &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background-color: var(--st-color-text-muted);
+      margin-left: var(--st-space-4);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: var(--st-space-8);
+    gap: var(--st-space-12);
+    padding: var(--st-space-4);
+
+  }
+
+  &__item {
+    background-color: var(--st-color-surface);
+    border: 1px solid var(--st-color-border);
+    border-radius: var(--st-radius-lg);
+    padding: var(--st-space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--st-space-4);
+
+    &__iconwrapper {
+      width: var(--st-space-12);
+      height: var(--st-space-12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--st-radius-lg);
+      background-color: var(--st-color-surface-offset);
+      border: 1px solid var(--st-color-border);
+    }
+    &__icon {
+      width: var(--st-space-6);
+      height: var(--st-space-6);
+      color: var(--st-color-text-muted);
+    }
+    &__title {
+      font-size: var(--st-text-lg);
+      font-weight: 600;
+      color: var(--st-color-text);
+      span {
+        color: var(--st-color-primary);
+      }
+    }
+    &__description {
+      font-size: var(--st-text-base);
+      color: var(--st-color-text-muted);
+    }
+  }
+
+  @media (min-width: $st-bp-md) {
+    width: var(--st-content-narrow);
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: $st-bp-lg) {
+    width: var(--st-content-default);
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
