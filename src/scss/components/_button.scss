@@ -12,11 +12,21 @@
   &--primary {
     background-color: var(--st-color-primary);
     color: var(--st-color-text-inverse);
-    &:hover {
+
+    &:hover,
+    &--hover {
       background-color: var(--st-color-primary-hover);
     }
-    &:active {
+
+    &:active,
+    &--active {
       background-color: var(--st-color-primary-active);
+    }
+
+    &:focus-visible,
+    &--focus {
+      outline: 2px solid var(--st-color-primary);
+      outline-offset: 2px;
     }
   }
 
@@ -24,14 +34,21 @@
     background-color: transparent;
     color: var(--st-color-primary);
     border-color: var(--st-color-primary);
+
     &:hover {
       background-color: var(--st-color-primary-hover);
       color: var(--st-color-text-inverse);
       border-color: var(--st-color-text-inverse);
     }
+
     &:active {
       color: var(--st-color-primary-hover);
       border-color: var(--st-color-primary-hover);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--st-color-primary);
+      outline-offset: 2px;
     }
   }
 
@@ -39,13 +56,131 @@
     background-color: transparent;
     color: var(--st-color-text-muted);
     border-color: transparent;
+
     &:hover {
-      background-color: var(--st-color-surface-offset);
+      background-color: var(--st-color-primary-hover);
       color: var(--st-color-text);
 
     }
+
     &:active {
       background-color: var(--st-color-border);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--st-color-primary);
+      outline-offset: 2px;
+    }
+  }
+
+  &--success {
+    background-color: var(--st-color-success-hl);
+    color: var(--st-color-success);
+    border: 1px solid var(--st-color-success);
+
+    &:hover {
+      background-color: var(--st-color-success);
+      color: var(--st-color-success-hl);
+      border: 1px solid var(--st-color-success-hl);
+    }
+  }
+
+  &--danger {
+    background-color: var(--st-color-danger-hl);
+    color: var(--st-color-danger);
+    border: 1px solid var(--st-color-danger);
+
+    &:hover {
+      background-color: var(--st-color-danger);
+      color: var(--st-color-danger-hl);
+      border: 1px solid var(--st-color-danger-hl);
+    }
+  }
+
+  &--warning {
+    background-color: var(--st-color-warning-hl);
+    color: var(--st-color-warning);
+    border: 1px solid var(--st-color-warning);
+
+    &:hover {
+      background-color: var(--st-color-warning);
+      color: var(--st-color-warning-hl);
+      border: 1px solid var(--st-color-warning-hl);
+    }
+  }
+
+  &--info {
+    background-color: var(--st-color-info-hl);
+    color: var(--st-color-info);
+    border: 1px solid var(--st-color-info);
+
+    &:hover {
+      background-color: var(--st-color-info);
+      color: var(--st-color-info-hl);
+      border: 1px solid var(--st-color-info-hl);
+    }
+  }
+
+  &--small {
+    padding: var(--st-space-1) var(--st-space-2);
+    font-size: var(--st-text-xs);
+  }
+
+  &--medium {
+    padding: var(--st-space-2) var(--st-space-4);
+    font-size: var(--st-text-sm);
+  }
+
+  &--large {
+    padding: var(--st-space-3) var(--st-space-6);
+    font-size: var(--st-text-base);
+  }
+
+  &:disabled {
+    color: var(--st-text-muted);
+    background-color: var(--st-color-primary-hl);
+    cursor: not-allowed;
+  }
+}
+
+@keyframes st-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.st-btn--loading {
+  position: relative;
+  pointer-events: none;
+
+  .st-btn__dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--st-space-1);
+
+    span {
+      width: 4px;
+      height: 4px;
+      border-radius: var(--st-radius-full);
+      background-color: currentColor;
+      animation: st-bounce 600ms ease-in-out infinite;
+
+      &:nth-child(2) {
+        animation-delay: 150ms;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 300ms;
+      }
     }
   }
 }

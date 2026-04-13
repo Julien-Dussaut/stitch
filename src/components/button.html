@@ -1,0 +1,93 @@
+<!-- src/components/_template.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="stitch-dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stitch — Button</title>
+</head>
+
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <div class="st-components-layout">
+    <div id="sidebar-placeholder"></div>
+
+    <main class="st-components-content">
+      <h1 class="st-components__title">Button</h1>
+
+      <p class="st-components__description">
+        The Button component is a fundamental UI element that allows users to perform actions or navigate through the
+        interface. It is designed to be versatile and can be used in various contexts, such as submitting forms,
+        triggering events, or linking to other pages. The Button component supports different styles, sizes, and states
+        to accommodate a wide range of use cases and enhance the user experience.
+      </p>
+
+      <h2 id="preview" class="st-components__subtitle">Preview</h2>
+
+      <div class="st-components__preview-container">
+        <div class="st-components__preview-nav">
+          <div class="st-components__preview-tabs">
+            <button class="st-components__tab-title" data-tab="variants" aria-current="true">Variants</button>
+            <button class="st-components__tab-title" data-tab="sizes">Sizes</button>
+            <button class="st-components__tab-title" data-tab="states">States</button>
+          </div>
+          <div class="st-components__preview-copy">
+            <button class="st-btn st-btn--primary">Copy HTML</button>
+            <button class="st-btn st-btn--primary">Copy CSS</button>
+          </div>
+        </div>
+        <div id="variants" class="st-components__preview-panel" data-tab="variants">
+          <button class="st-btn st-btn--primary st-btn--medium">Primary</button>
+          <button class="st-btn st-btn--outline st-btn--medium">Outline</button>
+          <button class="st-btn st-btn--ghost st-btn--medium">Ghost</button>
+          <button class="st-btn st-btn--success st-btn--medium">Success</button>
+          <button class="st-btn st-btn--info st-btn--medium">Info</button>
+          <button class="st-btn st-btn--warning st-btn--medium">Warning</button>
+          <button class="st-btn st-btn--danger st-btn--medium">Danger</button>
+        </div>
+        <div id="sizes" class="st-components__preview-panel" data-tab="sizes" hidden>
+          <button class="st-btn st-btn--primary st-btn--small">Small</button>
+          <button class="st-btn st-btn--primary st-btn--medium">Medium</button>
+          <button class="st-btn st-btn--primary st-btn--large">Large</button>
+        </div>
+        <div id="states" class="st-components__preview-panel" data-tab="states" hidden>
+          <button class="st-btn st-btn--primary st-btn--medium">Default</button>
+          <button class="st-btn st-btn--primary st-btn--medium st-btn--primary--hover">Hover</button>
+          <button class="st-btn st-btn--primary st-btn--medium st-btn--primary--focus">Focus</button>
+          <button class="st-btn st-btn--primary st-btn--medium st-btn--primary--active">Active</button>
+          <button class="st-btn st-btn--primary st-btn--medium" disabled>Disabled</button>
+          <button class="st-btn st-btn--primary st-btn--medium st-btn--loading">
+            <span class="st-btn__dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span style="visibility: hidden;">Primary</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 id="get-yours" class="st-components__subtitle">Get yours</h2>
+      <h2 id="how-it-works" class="st-components__subtitle">How it works</h2>
+      <h2 id="interactive" class="st-components__subtitle">Interactive</h2>
+    </main>
+
+    <!-- <div id="toc-placeholder"></div> -->
+
+    <div class="st-components__toc">
+      <h3 class="st-components__toc-title">On this page</h3>
+      <a class="st-components__toc-link" href="#preview">Preview</a>
+      <a class="st-components__toc-link" href="#get-yours">Get yours</a>
+      <a class="st-components__toc-link" href="#how-it-works">How it works</a>
+      <a class="st-components__toc-link" href="#interactive">Interactive</a>
+    </div>
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/header.js"></script>
+  <script type="module" src="/src/js/sidebar.js"></script>
+  <script type="module" src="/src/js/tabs.js"></script>
+</body>
+
+</html>
