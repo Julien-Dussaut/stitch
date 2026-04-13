@@ -32,14 +32,6 @@ const runAccessibilityAudit = (button) => {
   const lineHeight    = checkLineHeight(button);
   const touchTarget   = checkTouchTarget(button);
 
-  console.log(button.dataset.themeValue, {
-    textContrast:  textContrast.toFixed(2),
-    textLevel:     getWCAGLevel(textContrast),
-    focusContrast: focusContrast.toFixed(2),
-    focusLevel:    getWCAGLevel(focusContrast),
-    lineHeight,
-    touchTarget,
-  });
 
   const themeTitle = document.getElementById('theme-name');
   const contrastSpan    = document.getElementById('contrast-score');
