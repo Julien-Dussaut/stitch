@@ -1,56 +1,122 @@
 @use '../core/breakpoints' as *;
 
 .st-header {
-  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--st-font-body);
+  padding: var(--st-space-4) var(--st-space-6);
+  margin-bottom: var(--st-space-6);
+  border-bottom: 1px solid var(--st-color-border);
+  position: relative;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--st-space-2);
+    z-index: 10;
+  }
+
+  &__icon {
+    width: var(--st-space-12);
+    height: var(--st-space-12);
+  }
+
+  &__name {
+    font-size: var(--st-text-lg);
+    font-weight: 600;
+    color: var(--st-color-text);
+  }
+
+  &__burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--st-space-2);
+    border-radius: var(--st-radius-md);
+    color: var(--st-color-text);
+    z-index: 10;
+
+    &:hover {
+      background-color: var(--st-color-surface-offset);
+    }
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--st-color-bg);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--st-space-8);
+    z-index: 5;
+
+    // Toujours display:flex mais masqué via clip-path
+    display: flex;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    &--open {
+      clip-path: inset(0 0 0% 0);
+    }
+  }
+
+  &__link {
+    font-size: var(--st-text-lg);
+    color: var(--st-color-text-muted);
+    text-decoration: none;
+    padding: var(--st-space-2) var(--st-space-4);
+    border-radius: var(--st-radius-lg);
+    transition: color var(--st-transition);
+
+    &:hover {
+      background-color: var(--st-color-surface-offset);
+      color: var(--st-color-text);
+    }
+  }
+
+  &__config {
+    display: none;
+  }
+
+  &__lang {
+    display: flex;
+    align-items: center;
+    gap: var(--st-space-2);
+    border: 1px solid var(--st-color-border);
+    border-radius: var(--st-radius-lg);
+    font-size: var(--st-text-xs);
+    background-color: var(--st-color-surface);
+    color: var(--st-color-text);
+  }
 
   @media (min-width: $st-bp-lg) {
-    visibility: visible;
-    display: flex;
     width: 95dvw;
     margin: auto;
-    justify-content: space-between;
-    font-family: var(--st-font-body);
     padding: var(--st-space-4) var(--st-space-8);
-    border-bottom: 1px solid var(--st-color-border);
 
-    &__logo {
-      display: flex;
-      width: max-content;
-      align-items: center;
-      gap: var(--st-space-2);
-    }
-
-    &__icon {
-      width: var(--st-space-12);
-      height: var(--st-space-12);
-    }
-
-    &__name {
-      font-size: var(--st-text-lg);
-      font-weight: 600;
-      color: var(--st-color-text);
+    &__burger {
+      display: none;
     }
 
     &__nav {
       display: flex;
-      align-items: center;
+      position: static;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      flex-direction: row;
       gap: var(--st-space-6);
     }
 
     &__link {
-      width: 100%;
-      text-align: center;
-      padding: var(--st-space-2) var(--st-space-4);
       font-size: var(--st-text-sm);
-      color: var(--st-color-text-muted);
-      border-radius: var(--st-radius-lg);
-      text-decoration: none;
-      transition: color var(--st-transition);
-
-      &:hover {
-        background-color: var(--st-color-surface-offset);
-        color: var(--st-color-text);
-      }
+      text-align: center;
+      width: 100%;
     }
 
     &__config {
@@ -58,18 +124,5 @@
       align-items: center;
       gap: var(--st-space-4);
     }
-
-    &__lang {
-      display: flex;
-      align-items: center;
-      gap: var(--st-space-2);
-      border: 1px solid var(--st-color-border);
-      border-radius: var(--st-radius-lg);
-      // padding: var(--st-space-1) var(--st-space-3);
-      font-size: var(--st-text-xs);
-      background-color: var(--st-color-surface);
-      color: var(--st-color-text);
-    }
-
   }
 }
