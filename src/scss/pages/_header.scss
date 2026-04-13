@@ -111,6 +111,8 @@
       background-color: transparent;
       flex-direction: row;
       gap: var(--st-space-6);
+      clip-path: none;
+      transition: none;
     }
 
     &__link {

@@ -18,7 +18,7 @@ A lightweight design system and component library built for developers who care 
 npx stitch init
 
 # 2. Pick a theme
-npx stitch theme aurora
+npx stitch theme midnight
 
 # 3. Add components
 npx stitch add button card modal
@@ -58,7 +58,7 @@ Un design system léger et une bibliothèque de composants pensés pour les dév
 npx stitch init
 
 # 2. Choisir un thème
-npx stitch theme aurora
+npx stitch theme midnight
 
 # 3. Ajouter des composants
 npx stitch add button card modal
