@@ -79,6 +79,19 @@
     background-color: #050508;
   }
 
+  &__feature {
+    color: var(--st-color-primary);
+    animation: blink-text 1.5s step-start infinite;
+
+    @keyframes blink-text {
+      0%, 25% {
+        opacity: 1;
+      }
+      50.01%, 100% {
+        opacity: 0.5;
+      }
+    }
+  }
   &__addcommand {
     color: var(--st-color-text);
   }
