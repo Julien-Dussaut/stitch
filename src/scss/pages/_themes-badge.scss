@@ -1,0 +1,74 @@
+@use '../core/breakpoints' as *;
+
+.st-accessibility {
+  margin: var(--st-space-6) auto var(--st-space-12);
+  padding: var(--st-space-4);
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: var(--st-space-4);
+    font-size: var(--st-text-xs);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--st-color-text);
+  }
+
+  &__icon {
+    width: var(--st-space-4);
+    height: var(--st-space-4);
+    color: var(--st-color-text-muted);
+  }
+
+  &__badges {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--st-space-4);
+    margin-top: var(--st-space-4);
+    
+  }
+
+  @media (min-width: $st-bp-md) {
+    &__badges {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: $st-bp-lg) {
+    width: var(--st-content-default);
+
+    &__badges {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.st-badge {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--st-space-2);
+  padding: var(--st-space-2) var(--st-space-4);
+  font-size: var(--st-text-xs);
+  border-radius: var(--st-radius-lg);
+  &--success {
+    background-color: var(--st-color-success-hl);
+    color: var(--st-color-success);
+    border: 1px solid var(--st-color-success);
+  }
+
+  &--danger {
+    background-color: var(--st-color-danger-hl);
+    color: var(--st-color-danger);
+    border: 1px solid var(--st-color-danger);
+  }
+
+  &--warning {
+    background-color: var(--st-color-warning-hl);
+    color: var(--st-color-warning);
+    border: 1px solid var(--st-color-warning);
+  }
+
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="stitch-dark">
 
 <head>
   <meta charset="UTF-8">
@@ -12,7 +12,21 @@
   <!-- ! HEADER -->
   <header class="st-header">
     <div class="st-header__logo">
-      <img src="./src/images/stitch-icon.svg" alt="Stitch icon" class="st-header__icon">
+      <svg class="st-header__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+
+        <g transform="translate(50,50) rotate(-40) translate(-50,-50)">
+          <rect x="46.5" y="8" width="7" height="58" rx="3.5" fill="none" stroke="var(--st-color-text)"
+            stroke-width="2.5" />
+          <polygon points="50,2 46.5,9 53.5,9" fill="var(--st-color-text)" />
+          <ellipse cx="50" cy="60" rx="5" ry="3.5" fill="none" stroke="var(--st-color-text)" stroke-width="2" />
+        </g>
+
+        <path d="M 62 64
+           C 76 56, 84 68, 72 76
+           C 60 84, 48 72, 58 62" fill="none" stroke="var(--st-color-primary)" stroke-width="2.8"
+          stroke-linecap="round" />
+      </svg>
+      <!-- <img src="./src/images/stitch-icon.svg" alt="Stitch icon" class="st-header__icon"> -->
       <span class="st-header__name">Stitch</span>
     </div>
 
@@ -41,7 +55,20 @@
       </p>
       <h1 class="st-hero__title">
         Stitch
-        <img src="./src/images/stitch-icon.svg" alt="Stitch logo" class="st-hero__logo">
+        <svg class="st-hero__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+
+          <g transform="translate(50,50) rotate(-40) translate(-50,-50)">
+            <rect x="46.5" y="8" width="7" height="58" rx="3.5" fill="none" stroke="var(--st-color-text)"
+              stroke-width="2.5" />
+            <polygon points="50,2 46.5,9 53.5,9" fill="var(--st-color-text)" />
+            <ellipse cx="50" cy="60" rx="5" ry="3.5" fill="none" stroke="var(--st-color-text)" stroke-width="2" />
+          </g>
+
+          <path d="M 62 64
+           C 76 56, 84 68, 72 76
+           C 60 84, 48 72, 58 62" fill="none" stroke="var(--st-color-primary)" stroke-width="2.8"
+            stroke-linecap="round" />
+        </svg>
       </h1>
 
       <h2 class="st-hero__catchphrase">
@@ -162,33 +189,33 @@
     <section class="st-themes">
       <h2 class="st-themes__title">Themes</h2>
       <div class="st-themes__list">
-        <div class="st-theme st-theme--aurora">
+        <div data-theme-value="stitch-dark" data-theme="stitch-dark" class="st-theme st-theme--stitch-dark">
           <div class="st-theme__previews">
             <div class="st-theme__preview st-theme__preview--primary"></div>
             <div class="st-theme__preview st-theme__preview--secondary"></div>
           </div>
-          <h3 class="st-theme__name">Aurora</h3>
+          <h3 class="st-theme__name">Stitch dark</h3>
         </div>
-        <div class="st-theme st-theme--slate">
+        <div data-theme-value="stitch-light" data-theme="stitch-light" class="st-theme st-theme--stitch-light">
           <div class="st-theme__previews">
             <div class="st-theme__preview st-theme__preview--primary"></div>
             <div class="st-theme__preview st-theme__preview--secondary"></div>
           </div>
-          <h3 class="st-theme__name">Slate</h3>
+          <h3 class="st-theme__name">Stitch light</h3>
         </div>
-        <div class="st-theme st-theme--ember">
+        <div data-theme-value="ember" data-theme="ember" class="st-theme st-theme--ember">
           <div class="st-theme__previews">
             <div class="st-theme__preview st-theme__preview--primary"></div>
             <div class="st-theme__preview st-theme__preview--secondary"></div>
           </div>
           <h3 class="st-theme__name">Ember</h3>
         </div>
-        <div class="st-theme st-theme--forest">
+        <div data-theme-value="midnight" data-theme="midnight" class="st-theme st-theme--midnight">
           <div class="st-theme__previews">
             <div class="st-theme__preview st-theme__preview--primary"></div>
             <div class="st-theme__preview st-theme__preview--secondary"></div>
           </div>
-          <h3 class="st-theme__name">Forest</h3>
+          <h3 class="st-theme__name">Midnight</h3>
         </div>
       </div>
       <div class="st-accessibility">
@@ -196,24 +223,24 @@
           <span class="st-accessibility__icon">
             <i data-lucide="Clock"></i>
           </span>
-          Accessibility scores - <span class="st-accessibility__theme-name" id="theme-name">Aurora</span> theme
+          Accessibility scores - <span id="theme-name"></span>
         </h3>
         <div class="st-accessibility__badges">
           <div class="st-badge st-badge--success">
             <i data-lucide="CircleCheck"></i>
-            Contrast 7.2:1 AAA
+            Contrast <span id="contrast-score"></span> <span id="wcag-score"></span>
           </div>
           <div class="st-badge st-badge--success">
             <i data-lucide="CircleCheck"></i>
-            Focus ring 4.1:1
+            Focus ring <span id="focus-score"></span>
           </div>
-          <div class="st-badge st-badge--success">
+          <div class="st-badge st-badge--danger">
             <i data-lucide="CircleCheck"></i>
-            Line-height: 1.6
+            Line-height: <span id="line-height-score"></span>
           </div>
           <div class="st-badge st-badge--warning">
             <i data-lucide="CircleAlert"></i>
-            Touch target 38px - optimize ?
+            Touch target <span id="touch-target-score"></span> px
           </div>
         </div>
       </div>
@@ -251,6 +278,7 @@
       <a href="#" class="st-footer__link">Docs</a>
       <a href="#" class="st-footer__link">Components</a>
       <a href="#" class="st-footer__link">npm</a>
+      <a href="#" class="st-footer__link">MIT License</a>
     </nav>
   </footer>
   <script type="module" src="/src/js/main.js"></script>

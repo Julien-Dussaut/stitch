@@ -1,0 +1,45 @@
+@use '../core/breakpoints' as *;
+
+.st-themes {
+  width: 90dvw;
+  margin: var(--st-space-6) auto var(--st-space-12);
+  &__title {
+    display: flex;
+    align-items: center;
+    font-size: var(--st-text-sm);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--st-color-text-muted);
+
+    &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background-color: var(--st-color-text-muted);
+      margin-left: var(--st-space-4);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: var(--st-space-8);
+    gap: var(--st-space-12);
+    padding: var(--st-space-4);
+  }
+
+  @media (min-width: $st-bp-md) {
+    width: var(--st-content-narrow);
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: $st-bp-lg) {
+    width: var(--st-content-default);
+    &__list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

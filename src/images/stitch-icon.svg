@@ -1,24 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <!-- Fond transparent -->
 
-  <!-- Aiguille — orientée 45° -->
   <g transform="translate(50,50) rotate(-40) translate(-50,-50)">
-    <!-- Corps -->
     <rect x="46.5" y="8" width="7" height="58" rx="3.5"
-          fill="none" stroke="#e8e8ee" stroke-width="2.5"/>
-    <!-- Pointe -->
-    <polygon points="50,2 46.5,9 53.5,9" fill="#e8e8ee"/>
-    <!-- Chas -->
+          fill="none" stroke="var(--st-color-text)" stroke-width="2.5"/>
+    <polygon points="50,2 46.5,9 53.5,9" fill="var(--st-color-text)"/>
     <ellipse cx="50" cy="60" rx="5" ry="3.5"
-             fill="none" stroke="#e8e8ee" stroke-width="2"/>
+             fill="none" stroke="var(--st-color-text)" stroke-width="2"/>
   </g>
 
-  <!-- Fil — courbe organique qui sort du chas, en violet -->
   <path d="M 62 64
            C 76 56, 84 68, 72 76
            C 60 84, 48 72, 58 62"
         fill="none"
-        stroke="#6e56cf"
+        stroke="var(--st-color-primary)"
         stroke-width="2.8"
         stroke-linecap="round"/>
 </svg>

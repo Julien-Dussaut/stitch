@@ -1,7 +1,6 @@
 @use '../core/breakpoints' as *;
 
 .st-features {
-
   width: 90dvw;
   margin: var(--st-space-6) auto var(--st-space-12);
 
@@ -56,18 +55,6 @@
       height: var(--st-space-6);
       color: var(--st-color-text-muted);
     }
-    &__title {
-      font-size: var(--st-text-lg);
-      font-weight: 600;
-      color: var(--st-color-text);
-      span {
-        color: var(--st-color-primary);
-      }
-    }
-    &__description {
-      font-size: var(--st-text-base);
-      color: var(--st-color-text-muted);
-    }
 
   @media (min-width: $st-bp-md) {
     width: var(--st-content-narrow);
@@ -82,4 +69,19 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
+}
+
+.st-feature {
+  &__title {
+      font-size: var(--st-text-lg);
+      font-weight: 600;
+      color: var(--st-color-text);
+      span {
+        color: var(--st-color-primary);
+      }
+    }
+    &__description {
+      font-size: var(--st-text-base);
+      color: var(--st-color-text-muted);
+    }
 }

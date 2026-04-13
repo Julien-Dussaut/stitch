@@ -1,0 +1,54 @@
+@use '../core/breakpoints' as *;
+
+.st-theme {
+  border: 1px solid var(--st-color-primary);
+  border-radius: var(--st-radius-lg);
+  padding-top: var(--st-space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--st-space-4);
+  background-color: var(--st-color-bg);
+  cursor: pointer;
+
+  &__previews {
+    display: flex;
+    gap: var(--st-space-2);
+  }
+  &__preview {
+    &--primary {
+      width: var(--st-space-12);
+      height: var(--st-space-6);
+      border-radius: var(--st-radius-sm);
+      background-color: var(--st-color-primary);
+      border-color: var(--st-color-primary);
+    }
+    &--secondary {
+      width: var(--st-space-6);
+      height: var(--st-space-6);
+      background-color: var(--st-color-primary-hover);
+      border-color: var(--st-color-primary-hover);
+      border-radius: var(--st-radius-full);
+    }
+  }
+  &__name {
+    font-size: var(--st-text-sm);
+    font-weight: 600;
+    color: var(--st-color-text);
+    background-color: var(--st-color-bg);
+    width: 100%;
+    text-align: center;
+    padding: var(--st-space-2) 0;
+    border-radius: 0 0 var(--st-radius-lg) var(--st-radius-lg);
+    border-top: 1px solid var(--st-color-primary);
+  }
+  
+  &--active {
+    box-shadow: 0 0 12px var(--st-color-primary-hl), 0 0 0 2px var(--st-color-primary);
+  }
+  @media (min-width: $st-bp-md) {
+    
+  }
+
+  @media (min-width: $st-bp-lg) {}
+}
