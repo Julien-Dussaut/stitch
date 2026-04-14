@@ -26,6 +26,7 @@
     font-size: var(--st-text-lg);
     font-weight: 600;
     color: var(--st-color-text);
+    text-decoration: none;
   }
 
   &__burger {
@@ -97,7 +98,7 @@
   @media (min-width: $st-bp-lg) {
     width: 95dvw;
     margin: auto;
-    padding: var(--st-space-4) var(--st-space-8);
+    padding: var(--st-space-4) 0;
 
     &__burger {
       display: none;

@@ -5,6 +5,13 @@
   font-size: var(--st-text-sm);
   padding: var(--st-space-1) var(--st-space-2);
   border-radius: var(--st-radius-full);
+
+  &--primary {
+    background-color: var(--st-color-primary);
+    color: var(--st-color-primary-hl);
+    border: 1px solid var(--st-color-primary-border);
+  }
+
   &--success {
     background-color: var(--st-color-success-bg);
     color: var(--st-color-success-text);

@@ -14,20 +14,28 @@
     color: var(--st-color-text-inverse);
 
     &:hover,
-    &--hover {
+    &.st-btn--hover {
       background-color: var(--st-color-primary-hover);
     }
 
     &:active,
-    &--active {
+    &.st-btn--active {
       background-color: var(--st-color-primary-active);
     }
 
     &:focus-visible,
-    &--focus {
+    &.st-btn--focus {
       outline: 2px solid var(--st-color-primary);
       outline-offset: 2px;
     }
+
+    &:disabled,
+    &.st-btn--disabled {
+      color: var(--st-text-muted);
+      background-color: var(--st-color-primary-hl);
+      cursor: not-allowed;
+    }
+
   }
 
   &--outline {
@@ -35,20 +43,31 @@
     color: var(--st-color-primary);
     border-color: var(--st-color-primary);
 
-    &:hover {
+    &:hover,
+    &.st-btn--hover {
       background-color: var(--st-color-primary-hover);
       color: var(--st-color-text-inverse);
       border-color: var(--st-color-text-inverse);
     }
 
-    &:active {
+    &:active,
+    &.st-btn--active {
       color: var(--st-color-primary-hover);
       border-color: var(--st-color-primary-hover);
     }
 
-    &:focus-visible {
+    &:focus-visible,
+    &.st-btn--focus {
       outline: 2px solid var(--st-color-primary);
       outline-offset: 2px;
+    }
+
+    &:disabled,
+    &.st-btn--disabled {
+      color: var(--st-color-primary-hl);
+      background-color: transparent;
+      border-color: var(--st-color-primary-hl);
+      cursor: not-allowed;
     }
   }
 
@@ -57,19 +76,29 @@
     color: var(--st-color-text-muted);
     border-color: transparent;
 
-    &:hover {
+    &:hover,
+    &.st-btn--hover {
       background-color: var(--st-color-primary-hover);
       color: var(--st-color-text);
 
     }
 
-    &:active {
+    &:active,
+    &.st-btn--active {
       background-color: var(--st-color-border);
     }
 
-    &:focus-visible {
+    &:focus-visible,
+    &.st-btn--focus {
       outline: 2px solid var(--st-color-primary);
       outline-offset: 2px;
+    }
+
+    &:disabled,
+    &.st-btn--disabled {
+      color: var(--st-color-text-muted);
+      background-color: transparent;
+      cursor: not-allowed;
     }
   }
 
@@ -78,10 +107,19 @@
     color: var(--st-color-success);
     border: 1px solid var(--st-color-success);
 
-    &:hover {
+    &:hover,
+    &.st-btn--hover {
       background-color: var(--st-color-success);
       color: var(--st-color-success-hl);
       border: 1px solid var(--st-color-success-hl);
+    }
+
+    &:disabled,
+    &.st-btn--disabled {
+      color: var(--st-color-text-muted);
+      background-color: transparent;
+      border-color: var(--st-color-success-hl);
+      cursor: not-allowed;
     }
   }
 
@@ -90,10 +128,19 @@
     color: var(--st-color-danger);
     border: 1px solid var(--st-color-danger);
 
-    &:hover {
+    &:hover,
+    &.st-btn--hover {
       background-color: var(--st-color-danger);
       color: var(--st-color-danger-hl);
       border: 1px solid var(--st-color-danger-hl);
+    }
+
+    &:disabled,
+    &.st-btn--disabled {
+      color: var(--st-color-text-muted);
+      background-color: transparent;
+      border-color: var(--st-color-danger-hl);
+      cursor: not-allowed;
     }
   }
 
@@ -102,10 +149,19 @@
     color: var(--st-color-warning);
     border: 1px solid var(--st-color-warning);
 
-    &:hover {
+    &:hover,
+    &.st-btn--hover {
       background-color: var(--st-color-warning);
       color: var(--st-color-warning-hl);
       border: 1px solid var(--st-color-warning-hl);
+    }
+
+    &:disabled,
+    &.st-btn--disabled {
+      color: var(--st-color-text-muted);
+      background-color: transparent;
+      border-color: var(--st-color-warning-hl);
+      cursor: not-allowed;
     }
   }
 
@@ -114,10 +170,19 @@
     color: var(--st-color-info);
     border: 1px solid var(--st-color-info);
 
-    &:hover {
+    &:hover,
+    &.st-btn--hover {
       background-color: var(--st-color-info);
       color: var(--st-color-info-hl);
       border: 1px solid var(--st-color-info-hl);
+    }
+
+    &:disabled,
+    &.st-btn--disabled {
+      color: var(--st-color-text-muted);
+      background-color: transparent;
+      border-color: var(--st-color-info-hl);
+      cursor: not-allowed;
     }
   }
 
@@ -136,10 +201,24 @@
     font-size: var(--st-text-base);
   }
 
-  &:disabled {
-    color: var(--st-text-muted);
-    background-color: var(--st-color-primary-hl);
-    cursor: not-allowed;
+  &--no-padding {
+    padding: 0;
+  }
+
+  &--no-background {
+    background: transparent;
+  }
+
+  &--no-radius {
+    border-radius: 0;
+  }
+
+  &--no-border {
+    border: none;
+  }
+
+  &--no-transition {
+    transition: none;
   }
 }
 

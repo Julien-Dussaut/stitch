@@ -26,6 +26,7 @@
       text-decoration: none;
       display: flex;
       align-items: center;
+
       &::before {
         content: '';
         display: inline-block;
@@ -36,9 +37,11 @@
         // transform: translateY(-5px);
         transition: transform 0.2s, width 0.2s;
       }
+
       &:hover {
         color: var(--st-color-primary);
         font-weight: 600;
+
         &::before {
           width: 20px;
           background-color: var(--st-color-primary);
@@ -48,12 +51,72 @@
       &[aria-current="page"] {
         color: var(--st-color-primary);
         font-weight: 600;
+
         &::before {
           width: 20px;
           background-color: var(--st-color-primary);
         }
       }
     }
+  }
+
+  &__toc {
+    position: sticky;
+    top: var(--st-space-8);
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+
+    // gap: var(--st-space-1);
+    &-title {
+      font-size: var(--st-text-xs);
+      font-weight: 600;
+      color: var(--st-color-text-muted);
+      margin-bottom: var(--st-space-4);
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--st-color-text);
+      font-size: var(--st-text-xs);
+      transition: color 150ms;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        margin-right: var(--st-space-2);
+        width: 1px;
+        height: 1.6em;
+        background-color: var(--st-color-text);
+        transition: background-color 150ms ease;
+        align-self: center;
+      }
+
+      &:hover {
+        color: var(--st-color-primary);
+        transition: color 150ms;
+
+        &::before {
+          background-color: var(--st-color-primary);
+          transition: background-color 150ms ease;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: var(--st-text-xl);
+    font-weight: 700;
+    color: var(--st-color-text);
+  }
+
+  &__description {
+    font-size: var(--st-text-md);
+    color: var(--st-color-text-muted);
+    max-width: 100%;
+    padding: var(--st-space-4) 0;
   }
 
   &__subtitle {
@@ -65,6 +128,7 @@
     text-transform: uppercase;
     color: var(--st-color-text);
     margin: var(--st-space-6) 0 var(--st-space-4);
+
     &::after {
       content: '';
       flex: 1;
@@ -73,13 +137,18 @@
       margin-left: var(--st-space-4);
     }
   }
-  &__preview-container {
+
+  &__preview-container,
+  &__how-container,
+  &__get-yours, &__interactive {
     background-color: var(--st-color-surface);
     border: 1px solid var(--st-color-border);
     border-radius: var(--st-radius-xl);
+    padding: var(--st-space-6);
   }
 
-  &__preview-nav {
+  &__preview-nav,
+  &__form {
     display: flex;
     justify-content: space-between;
     gap: var(--st-space-4);
@@ -91,6 +160,10 @@
     border-top-right-radius: var(--st-radius-xl);
   }
 
+  &__form {
+    justify-content: flex-start;
+  }
+
   &__tab-title {
     background: none;
     border: none;
@@ -99,10 +172,13 @@
     padding: var(--st-space-1) var(--st-space-2);
     cursor: pointer;
     border-radius: var(--st-radius-md);
-    &[aria-current="true"], &:hover {
+
+    &[aria-current="true"],
+    &:hover {
       background-color: var(--st-color-surface);
     }
   }
+
   &__preview-panel:not([hidden]) {
     display: flex;
     flex-wrap: wrap;
@@ -112,39 +188,161 @@
     padding: var(--st-space-16) var(--st-space-6);
   }
 
-  &__toc {
-    position: sticky;
-    top: var(--st-space-8);
-    display: flex;
-    flex-direction: column;
-    // gap: var(--st-space-1);
-    &-title {
-      font-size: var(--st-text-xs);
-      font-weight: 600;
-      color: var(--st-color-text-muted);
-      margin-bottom: var(--st-space-4);
-    }
-    &-link {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: var(--st-color-text);
-      font-size: var(--st-text-xs);
-      transition: color 150ms;
-      &::before {
-        content: '';
-        display: inline-block;
-        margin-right: var(--st-space-2);
-        width: 1px;
-        height: 100%;
-        background-color: var(--st-color-text);
-      }
-      &:hover {
-        color: var(--st-color-primary);
-        &::before {
-          background-color: var(--st-color-primary);
-        }
-      }
+  &__how-description {
+    padding: var(--st-space-6);
+    font-size: var(--st-text-md);
+    color: var(--st-color-text-muted);
+    max-width: 100%;
+  }
+
+  &__highlight {
+    color: var(--st-color-primary);
+    padding: 0 var(--st-space-1);
+    background-color: var(--st-color-bg);
+    border-radius: var(--st-radius-sm);
+    font-weight: 600;
+  }
+
+  &__classes {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--st-space-4);
+    align-items: center;
+    padding: 0 var(--st-space-6);
+  }
+
+  &__code {
+    text-align: center;
+    font-family: var(--st-font-mono);
+    background-color: var(--st-color-primary-hl);
+    padding: 0 var(--st-space-4);
+    border-radius: var(--st-radius-sm);
+    font-size: var(--st-text-xs);
+    color: var(--st-color-primary);
+  }
+
+  &__class-description {
+    font-size: var(--st-text-sm);
+    color: var(--st-color-text-muted);
+    padding-left: var(--st-space-1);
+    max-width: 100%;
+  }
+
+  &__get-yours-previews-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: var(--st-space-4);
+  }
+
+  &__label {
+    font-size: var(--st-text-base);
+    color: var(--st-color-text);
+    margin-bottom: var(--st-space-2);
+
+  }
+
+  &__select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: var(--st-space-2) var(--st-space-8) var(--st-space-2) var(--st-space-4); // ← plus de padding à droite pour la flèche
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237a7974' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--st-space-3) center;
+    cursor: pointer;
+    padding: var(--st-space-2) var(--st-space-6);
+    border: 1px solid var(--st-color-border);
+    border-radius: var(--st-radius-md);
+    background-color: var(--st-color-surface);
+    color: var(--st-color-text);
+    font-size: var(--st-text-sm);
+
+    &:focus {
+      outline: none;
+      border-color: var(--st-color-primary);
+      box-shadow: 0 0 0 2px var(--st-color-primary-hl);
     }
   }
+
+  &__get-yours-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border-right: 1px solid var(--st-color-border);
+  }
+
+  &__get-yours-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--st-font-mono);
+    background-color: black;
+    border-radius: var(--st-radius-sm);
+    font-size: var(--st-text-xs);
+    color: var(--st-color-text);
+    width: 100%;
+    padding: var(--st-space-2);
+    white-space: pre-wrap;
+
+    pre[class*="language-"] {
+      background: transparent;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__interactive {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__interactive-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--st-space-4);
+  }
+
+  &__interactive-properties {
+  }
+
+  &__checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--st-color-border);
+  border-radius: var(--st-radius-sm);
+  background-color: var(--st-color-surface-offset); // ← ta couleur de fond
+  cursor: pointer;
+  position: relative;
+  transition: background-color 150ms, border-color 150ms;
+
+  // La coche quand cochée
+  &:checked {
+    background-color: var(--st-color-primary);
+    border-color: var(--st-color-primary);
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 1px;
+      width: 5px;
+      height: 9px;
+      border: 2px solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--st-color-primary-hl);
+  }
+}
+}
+
+.st-footer {
+  grid-column: 2;
 }
