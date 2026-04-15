@@ -34,4 +34,29 @@ if (placeholder) {
     burger.setAttribute('aria-expanded', isOpen);
     setIcon(isOpen ? 'x' : 'menu');
   });
+
+  initHeaderTheme();
+}
+
+function initHeaderTheme() {
+  const themeButtons = document.querySelectorAll('[data-theme-value]');
+  const savedTheme = localStorage.getItem('stitch:theme');
+
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }
+
+  themeButtons.forEach(btn => {
+    if (btn.dataset.themeValue === document.documentElement.getAttribute('data-theme')) {
+      btn.classList.add('st-header__theme--active');
+    }
+
+    btn.addEventListener('click', () => {
+      const themeValue = btn.dataset.themeValue;
+      document.documentElement.setAttribute('data-theme', themeValue);
+      localStorage.setItem('stitch:theme', themeValue);
+      themeButtons.forEach(b => b.classList.remove('st-header__theme--active'));
+      btn.classList.add('st-header__theme--active');
+    });
+  });
 }
