@@ -250,7 +250,7 @@
 
   &__fieldset {
     display: flex;
-    flex-direction: column;
+    
     gap: var(--st-space-2);
     border: none;
     padding: 0;
@@ -325,6 +325,9 @@
   &__api-section {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 0.3fr;
+    border: 1px solid var(--st-color-border);
+    border-radius: var(--st-radius-lg);
+    background-color: var(--st-color-surface-offset);
     align-items: center;
     padding: var(--st-space-4);
     gap: var(--st-space-2);
@@ -341,7 +344,6 @@
   &__api-desc {
     min-width: 0;
     white-space: nowrap;
-    // border: 1px solid var(--st-color-border);
     font-size: var(--st-text-sm);
     color: var(--st-color-text-muted);
   }

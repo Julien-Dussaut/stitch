@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <title>Stitch — Button</title>
-  <script type="module" crossorigin src="/stitch/assets/button-B5sxRgE7.js"></script>
-  <link rel="modulepreload" crossorigin href="/stitch/assets/header-BU3i-rVa.js">
-  <link rel="stylesheet" crossorigin href="/stitch/assets/header-BcY_AOx3.css">
+  <script type="module" crossorigin src="/stitch/assets/button-BOL7Fj8N.js"></script>
+  <link rel="modulepreload" crossorigin href="/stitch/assets/header-D3aIyjXf.js">
+  <link rel="stylesheet" crossorigin href="/stitch/assets/header-Ci75wZoM.css">
 </head>
 
 <body>
@@ -19,152 +19,321 @@
   <div id="header-placeholder"></div>
 
   <div class="st-components-layout">
+
+    <button type="button" class="st-components__sidebar-toggle" aria-expanded="false"
+      aria-controls="sidebar-placeholder" aria-label="Browse components">
+      Browse components
+    </button>
+
+    <div class="st-components__sidebar-overlay" aria-hidden="true"></div>
     <div id="sidebar-placeholder"></div>
 
     <main class="st-components-content">
       <h1 class="st-components__title">Button</h1>
 
       <p class="st-components__description">
-        The Button component is a fundamental UI element that allows users to perform actions or navigate through the
-        interface. It is designed to be versatile and can be used in various contexts, such as submitting forms,
-        triggering events, or linking to other pages. The Button component supports different styles, sizes, and states
-        to accommodate a wide range of use cases and enhance the user experience.
+        The Button is a foundational UI component in Stitch. Beyond showing how it looks, this page documents how it
+        behaves, how it adapts to themes, which tokens it uses, and which design decisions make it accessible and
+        reliable.
       </p>
 
       <h2 id="preview" class="st-components__subtitle">Preview</h2>
 
-      <div class="st-components__preview-container">
+      <section class="st-components__preview-container">
         <div class="st-components__preview-nav">
           <div class="st-components__preview-tabs">
-            <button class="st-components__tab-title" data-tab="variants" aria-current="true">Variants</button>
-            <button class="st-components__tab-title" data-tab="sizes">Sizes</button>
-            <button class="st-components__tab-title" data-tab="states">States</button>
+            <button type="button" id="tab-variants" role="tab" aria-controls="panel-variants" tabindex="0"
+              class="st-components__tab-title" data-tab="variants" aria-selected="true">Variants</button>
+            <button type="button" id="tab-sizes" role="tab" aria-controls="panel-sizes" tabindex="-1"
+              class="st-components__tab-title" data-tab="sizes">Sizes</button>
+            <button type="button" id="tab-states" role="tab" aria-controls="panel-states" tabindex="-1"
+              class="st-components__tab-title" data-tab="states">States</button>
           </div>
         </div>
-        <div id="variants" class="st-components__preview-panel" data-tab="variants">
-          <button class="st-btn st-btn--primary st-btn--medium">Primary</button>
-          <button class="st-btn st-btn--outline st-btn--medium">Outline</button>
-          <button class="st-btn st-btn--ghost st-btn--medium">Ghost</button>
-          <button class="st-btn st-btn--success st-btn--medium">Success</button>
-          <button class="st-btn st-btn--info st-btn--medium">Info</button>
-          <button class="st-btn st-btn--warning st-btn--medium">Warning</button>
-          <button class="st-btn st-btn--danger st-btn--medium">Danger</button>
+        <div id="panel-variants" role="tabpanel" aria-labelledby="tab-variants" class="st-components__preview-panel"
+          data-tab="variants">
+          <button type="button" class="st-btn st-btn--primary st-btn--medium">Primary</button>
+          <p class="st-components__button-description">Used for the main action in a view, when the interface needs a
+            clear next step.</p>
+          <button type="button" class="st-btn st-btn--outline st-btn--medium">Outline</button>
+          <p class="st-components__button-description">Used for secondary actions that should stay visible without
+            competing with the main call to action.</p>
+          <button type="button" class="st-btn st-btn--ghost st-btn--medium">Ghost</button>
+          <p class="st-components__button-description">Used for low-emphasis actions inside lightweight or already busy
+            interfaces.</p>
+          <button type="button" class="st-btn st-btn--success st-btn--medium">Success</button>
+          <p class="st-components__button-description">Used for positive or confirming actions related to a successful
+            outcome or safe completion.</p>
+          <button type="button" class="st-btn st-btn--info st-btn--medium">Info</button>
+          <p class="st-components__button-description">Used for contextual actions that support understanding,
+            discovery, or secondary guidance.</p>
+          <button type="button" class="st-btn st-btn--warning st-btn--medium">Warning</button>
+          <p class="st-components__button-description">Used for actions that require attention or an extra level of user
+            awareness before continuing.</p>
+          <button type="button" class="st-btn st-btn--danger st-btn--medium">Danger</button>
+          <p class="st-components__button-description">Used for destructive or high-risk actions with meaningful
+            consequences.</p>
         </div>
-        <div id="sizes" class="st-components__preview-panel" data-tab="sizes" hidden>
-          <button class="st-btn st-btn--primary st-btn--small">Small</button>
-          <button class="st-btn st-btn--primary st-btn--medium">Medium</button>
-          <button class="st-btn st-btn--primary st-btn--large">Large</button>
+        <div id="panel-sizes" role="tabpanel" aria-labelledby="tab-sizes" class="st-components__preview-panel"
+          data-tab="sizes" hidden>
+          <button type="button" class="st-btn st-btn--primary st-btn--small">Small</button>
+          <p class="st-components__button-description">Used in compact areas such as dense toolbars, tables, or
+            constrained layouts</p>
+          <button type="button" class="st-btn st-btn--primary st-btn--medium">Medium</button>
+          <p class="st-components__button-description">Used as the default size for most forms, panels, and general
+            interface actions.</p>
+          <button type="button" class="st-btn st-btn--primary st-btn--large">Large</button>
+          <p class="st-components__button-description">Used when the action needs more presence, comfort, or emphasis in
+            spacious layouts.</p>
         </div>
-        <div id="states" class="st-components__preview-panel" data-tab="states" hidden>
-          <button class="st-btn st-btn--primary st-btn--medium">Default</button>
-          <button class="st-btn st-btn--primary st-btn--medium st-btn--primary--hover">Hover</button>
-          <button class="st-btn st-btn--primary st-btn--medium st-btn--primary--focus">Focus</button>
-          <button class="st-btn st-btn--primary st-btn--medium st-btn--primary--active">Active</button>
-          <button class="st-btn st-btn--primary st-btn--medium" disabled>Disabled</button>
-          <button class="st-btn st-btn--primary st-btn--medium st-btn--loading">
-            <span class="st-btn__dots">
+        <div id="panel-states" role="tabpanel" aria-labelledby="tab-states" class="st-components__preview-panel"
+          data-tab="states" hidden>
+          <button type="button" class="st-btn st-btn--primary st-btn--medium">Default</button>
+          <p class="st-components__button-description">Shows the button in its resting, ready-to-use state before any
+            interaction happens</p>
+          <button type="button" class="st-btn st-btn--primary st-btn--medium st-btn--primary--hover">Hover</button>
+          <p class="st-components__button-description">Shows that the action is interactive and currently pointed at
+            with a cursor.</p>
+          <button type="button" class="st-btn st-btn--primary st-btn--medium st-btn--primary--focus">Focus</button>
+          <p class="st-components__button-description">Shows that the button is currently targeted through keyboard
+            navigation or another focus-driven interaction.</p>
+          <button type="button" class="st-btn st-btn--primary st-btn--medium st-btn--primary--active">Active</button>
+          <p class="st-components__button-description">Shows the moment the action is being pressed or triggered.</p>
+          <button type="button" class="st-btn st-btn--primary st-btn--medium" disabled>Disabled</button>
+          <p class="st-components__button-description">Shows that the action is currently unavailable in the present
+            context.</p>
+          <button type="button" class="st-btn st-btn--primary st-btn--medium st-btn--loading" aria-label="Loading"
+            aria-busy="true">
+            <span class="st-btn__dots" aria-hidden="true">
               <span></span>
               <span></span>
               <span></span>
+              <span class="sr-only">Loading</span>
+              <span aria-hidden="true" style="visibility: hidden;">Primary</span>
             </span>
             <span style="visibility: hidden;">Primary</span>
           </button>
+          <p class="st-components__button-description">Shows that the action has been triggered and is waiting for a
+            result or completion.</p>
         </div>
-      </div>
+      </section>
+
+      <h2 id="api" class="st-components__subtitle">API</h2>
+
+      <section class="st-components__api-container">
+        <article class="st-components__api-section">
+          <h3 class="st-components__api-title">Base class</h3>
+          <p class="st-components__api-desc">
+            Base class for the button component, providing core styles and structure. It is required for all button
+          </p>
+          <code class="st-components__code-block">st-btn</code>
+        </article>
+
+        <article class="st-components__api-section">
+          <h3 class="st-components__api-title">Variants</h3>
+          <p class="st-components__api-desc">
+            Applies the primary color scheme to the button, making it stand
+            out as the main action.
+          </p>
+          <code class="st-components__code-block">--primary</code>
+          <p class="st-components__api-desc">
+            Gives the button an outlined style, with a transparent background
+            and a border.
+          </p>
+          <code class="st-components__code-block">--outline</code>
+          <p class="st-components__api-desc">
+            Creates a ghost button with no background or border, relying on
+            text color for visibility.
+          </p>
+          <code class="st-components__code-block">--ghost</code>
+          <p class="st-components__api-desc">
+            Applies a color scheme that indicates a successful or positive action,
+            outcome, or state.
+          </p>
+          <code class="st-components__code-block">--success</code>
+          <p class="st-components__api-desc">
+            Applies a color scheme that indicates informational or neutral actions,
+            context, or state.
+          </p>
+          <code class="st-components__code-block">--warning</code>
+          <p class="st-components__api-desc">
+            Applies a color scheme that indicates destructive or high-risk actions,
+            outcomes, or states.
+          </p>
+          <code class="st-components__code-block">--danger</code>
+        </article>
+
+        <article class="st-components__api-section">
+          <h3 class="st-components__api-title">Sizes</h3>
+          <p class="st-components__api-desc">
+            Sets the button to a small size, used in compact areas such as dense toolbars, tables, or
+            constrained layouts.
+          </p>
+          <code class="st-components__code-block">--small</code>
+          <p class="st-components__api-desc">
+            Sets the button to a small size, used in compact areas such as dense toolbars, tables, or
+            constrained layouts.
+          </p>
+          <code class="st-components__code-block">--medium</code>
+          <p class="st-components__api-desc">
+            Sets the button to a small size, used in compact areas such as dense toolbars, tables, or
+            constrained layouts.
+          </p>
+          <code class="st-components__code-block">--large</code>
+        </article>
+
+        <article class="st-components__api-section">
+          <h3 class="st-components__api-title">Tokens</h3>
+          <p class="st-components__api-desc">Primary background</p>
+          <code class="st-components__code-block">--st-color-primary</code>
+          <p class="st-components__api-desc">Text on colored background</p>
+          <code class="st-components__code-block">--st-color-text-inverse</code>
+
+          <p class="st-components__api-desc">Horizontal padding</p>
+          <code class="st-components__code-block">--st-space-4</code>
+
+        </article>
+      </section>
 
       <h2 id="get-yours" class="st-components__subtitle">Get yours</h2>
 
-      <div class="st-components__get-yours">
+      <section class="st-components__get-yours-container">
         <form class="st-components__form">
-          <label for="variant" class="st-components__label">
-            Variant&nbsp;
-            <select id="variant" name="variant" class="st-components__select">
-              <option value="primary" selected>Primary</option>
-              <option value="outline">Outline</option>
-              <option value="ghost">Ghost</option>
-              <option value="success">Success</option>
-              <option value="info">Info</option>
-              <option value="warning">Warning</option>
-              <option value="danger">Danger</option>
-            </select>
-          </label>
-          <label for="size" class="st-components__label">
-            Size&nbsp;
-            <select id="size" name="size" class="st-components__select">
-              <option value="small">Small</option>
-              <option value="medium" selected>Medium</option>
-              <option value="large">Large</option>
-            </select>
-          </label>
-          <label for="state" class="st-components__label">
-            State&nbsp;
-            <select id="state" name="state" class="st-components__select">
-              <option value="default" selected>Default</option>
-              <option value="disabled">Disabled</option>
-              <option value="loading">Loading</option>
-            </select>
-          </label>
+          <fieldset class="st-components__fieldset">
+            <legend class="st-components__legend">Configure your button</legend>
+            <label for="variant" class="st-components__label">
+              Variant&nbsp;
+              <select id="variant" name="variant" class="st-components__select">
+                <option value="primary" selected>Primary</option>
+                <option value="outline">Outline</option>
+                <option value="ghost">Ghost</option>
+                <option value="success">Success</option>
+                <option value="info">Info</option>
+                <option value="warning">Warning</option>
+                <option value="danger">Danger</option>
+              </select>
+            </label>
+            <label for="size" class="st-components__label">
+              Size&nbsp;
+              <select id="size" name="size" class="st-components__select">
+                <option value="small">Small</option>
+                <option value="medium" selected>Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </label>
+            <label for="state" class="st-components__label">
+              State&nbsp;
+              <select id="state" name="state" class="st-components__select">
+                <option value="default" selected>Default</option>
+                <option value="disabled">Disabled</option>
+                <option value="loading">Loading</option>
+              </select>
+            </label>
+          </fieldset>
         </form>
         <div class="st-components__get-yours-previews-container">
           <div class="st-components__get-yours-preview">
-            <button id="get-yours-render" class="st-btn">Label</button>
+            <button type="button" id="get-yours-render" class="st-btn">Label</button>
           </div>
+          <h3 class="st-components__get-yours-preview-title">HTML</h3>
           <div class="st-components__get-yours-code">
-            <pre><code id="getYoursCode" class="language-html"></code></pre>
+            <pre><code id="getYoursCodeHtml" class="language-html"></code></pre>
+          </div>
+          <h3 class="st-components__get-yours-preview-title">CSS</h3>
+          <div class="st-components__get-yours-code">
+            <pre><code id="getYoursCodeCss" class="language-css"></code></pre>
           </div>
         </div>
-      </div>
+      </section>
 
-      <h2 id="how-it-works" class="st-components__subtitle">How it works</h2>
+      <h2 id="accessibility" class="st-components__subtitle">Accessibility</h2>
 
-      <div class="st-components__how-container">
-        <p class="st-components__how-description">
-          The button is built on a single base class <span class="st-components__highlight">st-btn</span> with variant
-          modifiers following BEM convention. All visual properties consume tokens - no hardcoded values in the
-          component itself.
+      <section class="st-components__accessibility-container">
+        <p class="st-components__accessibility-description">
+          Accessibility is not an extra layer added after the fact, it is part of how the Button works. This section
+          explains the decisions that make the component usable with a keyboard, clear across themes and states, and
+          reliable for different interaction contexts.
         </p>
-        <div class="st-components__classes">
-          <p class="st-components__code">st-btn</p>
-          <p class="st-components__class-description">Base class for the button component, providing core styles and
-            structure.</p>
-          <p class="st-components__code">--primary</p>
-          <p class="st-components__class-description">Applies the primary color scheme to the button, making it stand
-            out as the main action.</p>
-          <p class="st-components__code">--outline</p>
-          <p class="st-components__class-description">Gives the button an outlined style, with a transparent background
-            and a border.</p>
-          <p class="st-components__code">--ghost</p>
-          <p class="st-components__class-description">Creates a ghost button with no background or border, relying on
-            text color for visibility.</p>
-        </div>
-      </div>
+        <div class="st-components__accessibility-cards">
+          <div class="st-components__accessibility-card">
+            <h3 class="st-components__accessibility-card-title">Keyboard Navigation</h3>
+            <p class="st-components__accessibility-text">
+              The component relies on the native <code>&lt;button&gt;</code> element, which makes it keyboard accessible
+              by default.
+              It can be reached with Tab and activated with Enter or Space without requiring custom interaction logic
+            </p>
+          </div>
+          <div class="st-components__accessibility-card">
+            <h3 class="st-components__accessibility-card-title">Screen Reader Support</h3>
+            <p class="st-components__accessibility-text">
+              The Button uses semantic HTML first, then adds ARIA only when a state needs extra context, such as
+              loading. This keeps the component understandable for assistive technologies without duplicating native
+              behavior.
+            </p>
+          </div>
+          <div class="st-components__accessibility-card">
+            <h3 class="st-components__accessibility-card-title">Contrast and Visibility</h3>
+            <p class="st-components__accessibility-text">
+              Colors, focus states, and text visibility are driven by design tokens and verified against real theme
+              values. This helps keep the Button readable and distinguishable across variants, backgrounds, and active
+              themes.
+            </p>
+          </div>
+          <div class="st-components__accessibility-card">
+            <h3 class="st-components__accessibility-card-title">Disabled State</h3>
+            <p class="st-components__accessibility-text">
+              Disabled buttons use the native <code>disabled</code> attribute so they are correctly exposed as
+              unavailable and removed from keyboard interaction when needed.
+            </p>
+          </div>
 
+          <div class="st-components__accessibility-card">
+            <h3 class="st-components__accessibility-card-title">Loading State</h3>
+            <p class="st-components__accessibility-text">
+              Loading buttons keep their structure readable and use additional accessible text when visual indicators
+              alone would not provide enough context for assistive technologies.
+            </p>
+          </div>
+
+          <div class="st-components__accessibility-card">
+            <h3 class="st-components__accessibility-card-title">Touch Targets</h3>
+            <p class="st-components__accessibility-text">
+              Spacing and sizing tokens help keep the Button comfortable to tap, making interactive targets easier to
+              use on touch devices and in dense interfaces.
+            </p>
+          </div>
+        </div>
+      </section>
       <h2 id="interactive" class="st-components__subtitle">Interactive</h2>
 
-      <div class="st-components__interactive">
-        <div class="st-components__interactive-preview">
-          <button class="interactive-elt st-btn st-btn--primary st-btn--medium">Primary</button>
-          <button class="interactive-elt st-btn st-btn--outline st-btn--medium">Outline</button>
-        </div>
+      <section class="st-components__interactive-container">
+        <article class="st-components__interactive-preview" aria-labelledby="interactive-preview-title">
+          <h3 id="interactive-preview-title" class="sr-only">Interactive Preview</h3>
+          <button type="button" class="interactive-elt st-btn st-btn--primary st-btn--medium">Primary</button>
+          <button type="button" class="interactive-elt st-btn st-btn--outline st-btn--medium">Outline</button>
+        </article>
         <form class="st-components__interactive-properties">
-          <div class="st-components__property">
-            <input type="checkbox" id="padding" name="padding" class="st-components__checkbox" checked />
-            <label for="padding" class="st-components__checkbox-label">Padding</label>
-          </div>
-          <div class="st-components__property">
-            <input type="checkbox" id="background" name="background" class="st-components__checkbox" checked />
-            <label for="background" class="st-components__checkbox-label">Background</label>
-          </div>
-          <div class="st-components__property">
-            <input type="checkbox" id="radius" name="radius" class="st-components__checkbox" checked />
-            <label for="radius" class="st-components__checkbox-label">Border Radius</label>
-          </div>
-          <div class="st-components__property">
-            <input type="checkbox" id="border" name="border" class="st-components__checkbox" checked />
-            <label for="border" class="st-components__checkbox-label">Border</label>
-          </div>
+          <fieldset class="st-components__fieldset">
+            <legend class="st-components__legend">Toggle button properties</legend>
+            <div class="st-components__property">
+              <input type="checkbox" id="padding" name="padding" class="st-components__checkbox" checked />
+              <label for="padding" class="st-components__checkbox-label">Padding</label>
+            </div>
+            <div class="st-components__property">
+              <input type="checkbox" id="background" name="background" class="st-components__checkbox" checked />
+              <label for="background" class="st-components__checkbox-label">Background</label>
+            </div>
+            <div class="st-components__property">
+              <input type="checkbox" id="radius" name="radius" class="st-components__checkbox" checked />
+              <label for="radius" class="st-components__checkbox-label">Border Radius</label>
+            </div>
+            <div class="st-components__property">
+              <input type="checkbox" id="border" name="border" class="st-components__checkbox" checked />
+              <label for="border" class="st-components__checkbox-label">Border</label>
+            </div>
+          </fieldset>
         </form>
-      </div>
+      </section>
     </main>
 
     <div id="toc-placeholder" class="st-components__toc"></div>

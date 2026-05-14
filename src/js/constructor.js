@@ -3,6 +3,17 @@ const previewGetYours = document.querySelector('#get-yours-render');
 const codeGetYoursHtml = document.querySelector('#getYoursCodeHtml');
 const codeGetYoursCss = document.querySelector('#getYoursCodeCss');
 
+const BUTTON_STYLE_PROPERTIES = [
+  ['background', 'backgroundColor'],
+  ['color', 'color'],
+  ['border', 'border'],
+  ['padding', 'padding'],
+  ['font-size', 'fontSize'],
+  ['border-radius', 'borderRadius'],
+  ['opacity', 'opacity'],
+  ['cursor', 'cursor'],
+];
+
 const LOADING_INNER = `
   <span class="st-btn__dots">
     <span></span>
@@ -15,18 +26,49 @@ function getState() {
   return document.querySelector('#state')?.value ?? 'default';
 }
 
-function generatePreview() {
+function getPreviewClasses() {
+  const classes = ['st-btn'];
+
   selectsGetYours.forEach(select => {
-    const isStateDisabled = select.id === 'state' && select.value === 'disabled';
-    if (!isStateDisabled) {
-      previewGetYours.classList.add(`st-btn--${select.value}`);
+    if (select.id === 'state' && select.value === 'disabled') {
+      return;
     }
-    select.dataset.previous = select.value;
+
+    classes.push(`st-btn--${select.value}`);
   });
+
+  return classes;
+}
+
+function generatePreview() {
+  previewGetYours.className = getPreviewClasses().join(' ');
 
   const state = getState();
   previewGetYours.toggleAttribute('disabled', state === 'disabled');
   previewGetYours.innerHTML = state === 'loading' ? LOADING_INNER : 'Label';
+}
+
+function formatCurrentCss() {
+  const state = getState();
+  const selector = `.${getPreviewClasses().join('.')}${state === 'disabled' ? ':disabled' : ''}`;
+  const styles = getComputedStyle(previewGetYours);
+  const declarations = BUTTON_STYLE_PROPERTIES
+    .map(([cssProperty, styleProperty]) => {
+      const value = styles[styleProperty].trim();
+
+      if (cssProperty === 'opacity' && value === '1') {
+        return null;
+      }
+
+      if (cssProperty === 'cursor' && (value === 'auto' || value === 'default')) {
+        return null;
+      }
+
+      return `  ${cssProperty}: ${value};`;
+    })
+    .filter(Boolean);
+
+  return `${selector} {\n${declarations.join('\n')}\n}`;
 }
 
 function generateClasses() {
@@ -45,21 +87,19 @@ function generateClasses() {
   codeGetYoursHtml.textContent = `<button\n\t type="button"\n\t class="st-btn ${classes.trim()}"${disabledAttr}\n>\n\t${inner}\n</button>`;
   Prism.highlightElement(codeGetYoursHtml);
 
-  codeGetYoursCss.textContent = `/* CSS for the button */`;
+  codeGetYoursCss.textContent = formatCurrentCss();
   Prism.highlightElement(codeGetYoursCss);
 }
 
-generatePreview();
-generateClasses();
+function updateGetYours() {
+  generatePreview();
+  generateClasses();
+}
+
+updateGetYours();
 
 selectsGetYours.forEach(select => {
-  select.addEventListener('change', (event) => {
-    const previousValue = select.dataset.previous;
-    const newValue = event.target.value;
-    previewGetYours.classList.remove(`st-btn--${previousValue}`);
-    generateClasses();
-    previewGetYours.classList.add(`st-btn--${newValue}`);
-    event.target.dataset.previous = newValue;
-    generatePreview();
+  select.addEventListener('change', () => {
+    updateGetYours();
   });
 });
