@@ -1,6 +1,7 @@
 // theme-switcher.js
 import { getContrastRatio, getWCAGLevel, checkLineHeight, checkTouchTarget } from "./accessibility";
 import { createIcons, icons } from "lucide";
+
 const resolveColorToHex = (cssColor) => {
   const canvas = document.createElement('canvas');
   canvas.width = canvas.height = 1;

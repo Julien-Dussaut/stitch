@@ -1,6 +1,6 @@
 const checkboxes = document.querySelectorAll('.st-components__checkbox');
 const interactiveElements = document.querySelectorAll('.interactive-elt');
-console.log({interactiveElements});
+
 checkboxes.forEach(checkbox => {
   checkbox.addEventListener('change', () => {
     interactiveElements.forEach(element => {

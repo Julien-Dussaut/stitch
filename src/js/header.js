@@ -38,6 +38,14 @@ if (placeholder) {
   initHeaderTheme();
 }
 
+function updateTokenValues() {
+  document.querySelectorAll('[data-token]').forEach(el => {
+    const tokenName = el.dataset.token;
+    const value = getComputedStyle(document.documentElement).getPropertyValue(tokenName).trim();
+    el.textContent = value;
+  });
+};
+
 function initHeaderTheme() {
   const themeButtons = document.querySelectorAll('[data-theme-value]');
   const savedTheme = localStorage.getItem('stitch:theme');
@@ -57,6 +65,8 @@ function initHeaderTheme() {
       localStorage.setItem('stitch:theme', themeValue);
       themeButtons.forEach(b => b.classList.remove('st-header__theme--active'));
       btn.classList.add('st-header__theme--active');
+      updateTokenValues();
     });
   });
+  updateTokenValues();
 }

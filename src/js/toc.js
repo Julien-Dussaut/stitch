@@ -10,6 +10,7 @@ if (placeholder) {
   titles.forEach(title => {
     const link = document.createElement('a');
     link.classList.add('st-components__toc-link');
+    link.setAttribute('id', `toc-${title.id}`);
     link.href = `#${title.id}`;
     link.textContent = title.textContent;
     placeholder.appendChild(link);

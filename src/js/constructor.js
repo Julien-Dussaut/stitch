@@ -1,6 +1,7 @@
 const selectsGetYours = document.querySelectorAll('.st-components__select');
 const previewGetYours = document.querySelector('#get-yours-render');
-const codeGetYours = document.querySelector('#getYoursCode');
+const codeGetYoursHtml = document.querySelector('#getYoursCodeHtml');
+const codeGetYoursCss = document.querySelector('#getYoursCodeCss');
 
 const LOADING_INNER = `
   <span class="st-btn__dots">
@@ -41,8 +42,11 @@ function generateClasses() {
   const disabledAttr = state === 'disabled' ? ' disabled' : '';
   const inner = state === 'loading' ? LOADING_INNER.trim() : 'Label';
 
-  codeGetYours.textContent = `<button\n \tclass="st-btn ${classes.trim()}"${disabledAttr}\n>\n\t${inner}\n</button>`;
-Prism.highlightElement(codeGetYours);
+  codeGetYoursHtml.textContent = `<button\n\t type="button"\n\t class="st-btn ${classes.trim()}"${disabledAttr}\n>\n\t${inner}\n</button>`;
+  Prism.highlightElement(codeGetYoursHtml);
+
+  codeGetYoursCss.textContent = `/* CSS for the button */`;
+  Prism.highlightElement(codeGetYoursCss);
 }
 
 generatePreview();
