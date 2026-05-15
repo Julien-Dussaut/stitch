@@ -346,6 +346,12 @@
     white-space: nowrap;
     font-size: var(--st-text-sm);
     color: var(--st-color-text-muted);
+
+    @media (max-width: $st-bp-sm) {
+      white-space: normal;
+      border-bottom: 2px solid var(--st-color-border);
+      padding-bottom: var(--st-space-2);
+    }
   }
 
   &__code-block {
@@ -356,7 +362,6 @@
     background-color: var(--st-color-bg);
     padding: var(--st-space-2) var(--st-space-3);
     border-radius: var(--st-radius-sm);
-    // justify-self: end;
     text-align: center;
   }
 
