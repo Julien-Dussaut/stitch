@@ -11,7 +11,8 @@ if (placeholder) {
     const link = document.createElement('a');
     link.classList.add('st-components__toc-link');
     link.setAttribute('id', `toc-${title.id}`);
-    link.href = `#${title.id}`;
+    
+    link.href = `${document.URL}#${title.id}`;
     link.textContent = title.textContent;
     placeholder.appendChild(link);
   });

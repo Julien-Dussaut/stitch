@@ -195,7 +195,7 @@
 
       <h2 id="get-yours" class="st-components__subtitle">Get yours</h2>
 
-      <section class="st-components__get-yours-container">
+      <section class="st-components__get-yours-container" data-component="button">
         <form class="st-components__form">
           <fieldset class="st-components__fieldset">
             <legend class="st-components__legend">Configure your button</legend>
@@ -233,15 +233,45 @@
           <div class="st-components__get-yours-preview">
             <button type="button" id="get-yours-render" class="st-btn">Label</button>
           </div>
-          <h3 class="st-components__get-yours-preview-title">HTML</h3>
+          <h3 class="st-components__get-yours-preview-title">
+            HTML
+            <span class="st-components__icon" id="copyHtml">
+              <i data-lucide="Copy" id="copyHtmlIcon"></i>
+              <span class="sr-only">Copy HTML code</span>
+            </span>
+          </h3>
           <div class="st-components__get-yours-code">
-            <pre><code id="getYoursCodeHtml" class="language-html"></code></pre>
+            <pre class="st-components__get-yours-code-container">
+              <code id="getYoursCodeHtml" data-copy-target="copyHtml" class="language-html"></code>
+            </pre>
           </div>
-          <h3 class="st-components__get-yours-preview-title">CSS</h3>
+          <h3 class="st-components__get-yours-preview-title">
+            CSS
+            <button class="st-components__icon" id="copyCss">
+              <i data-lucide="Copy" id="copyCssIcon"></i>
+              <span class="sr-only">Copy CSS code</span>
+            </button>
+          </h3>
           <div class="st-components__get-yours-code">
-            <pre><code id="getYoursCodeCss" class="language-css"></code></pre>
+            <pre class="st-components__get-yours-code-container">
+              <code id="getYoursCodeCss" data-copy-target="copyCss" class="language-css"></code>
+            </pre>
+          </div>
+          <h3 class="st-components__get-yours-preview-title">
+            Tokens
+            <span class="st-components__icon" id="copyCssTokens">
+              <i data-lucide="Copy" id="copyCssTokensIcon"></i>
+              <span class="sr-only">Copy Tokens code</span>
+            </span>
+          </h3>
+          <div class="st-components__get-yours-code">
+            <pre
+              class="st-components__get-yours-code-container">
+              <code id="getYoursCodeCssTokens" data-copy-target="copyTokens" class="language-css"></code>
+            </pre>
           </div>
         </div>
+
       </section>
 
       <h2 id="accessibility" class="st-components__subtitle">Accessibility</h2>
@@ -350,9 +380,11 @@
     <script type="module" src="/src/js/sidebar.js"></script>
     <script type="module" src="/src/js/tabs.js"></script>
     <script type="module" src="/src/js/toc.js"></script>
-    <script type="module" src="/src/js/constructor.js"></script>
+    <!-- <script type="module" src="/src/js/constructor.js"></script> -->
+    <script type="module" src="/src/js/generique-constructor.js"></script>
     <script type="module" src="/src/js/interactivity.js"></script>
     <script type="module" src="/src/js/toc-observer.js"></script>
+    <script type="module" src="/src/js/copyCode.js"></script>
 </body>
 
 </html>
