@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-  <title>Stitch — Button</title>
+  <title>Stitch — Badge</title>
 </head>
 
 <body>
@@ -27,12 +27,10 @@
     <div id="sidebar-placeholder"></div>
 
     <main class="st-components-content">
-      <h1 class="st-components__title">Button</h1>
+      <h1 class="st-components__title">Badge</h1>
 
       <p class="st-components__description">
-        The Button is a foundational UI component in Stitch. Beyond showing how it looks, this page documents how it
-        behaves, how it adapts to themes, which tokens it uses, and which design decisions make it accessible and
-        reliable.
+        The Badge is a compact, non-interactive element used to communicate status, category, or metadata at a glance. This page documents its variants and the decisions that keep it readable and accessible across themes.
       </p>
 
       <h2 id="preview" class="st-components__subtitle">Preview</h2>
@@ -42,10 +40,6 @@
           <div class="st-components__preview-tabs">
             <button type="button" id="tab-variants" role="tab" aria-controls="panel-variants" tabindex="0"
               class="st-components__tab-title" data-tab="variants" aria-selected="true">Variants</button>
-            <button type="button" id="tab-sizes" role="tab" aria-controls="panel-sizes" tabindex="-1"
-              class="st-components__tab-title" data-tab="sizes">Sizes</button>
-            <button type="button" id="tab-states" role="tab" aria-controls="panel-states" tabindex="-1"
-              class="st-components__tab-title" data-tab="states">States</button>
           </div>
         </div>
         <div id="panel-variants" role="tabpanel" aria-labelledby="tab-variants" class="st-components__preview-panel"
@@ -265,7 +259,8 @@
             </span>
           </h3>
           <div class="st-components__get-yours-code">
-            <pre class="st-components__get-yours-code-container">
+            <pre
+              class="st-components__get-yours-code-container">
               <code id="getYoursCodeCssTokens" data-copy-target="copyTokens" class="language-css"></code>
             </pre>
           </div>
@@ -342,7 +337,7 @@
         <form class="st-components__interactive-properties">
           <fieldset class="st-components__fieldset-interactive">
             <legend class="st-components__legend">Toggle button properties</legend>
-            <!-- <div class="st-components__property">
+            <div class="st-components__property">
               <input type="checkbox" id="padding" name="padding" class="st-components__checkbox" checked />
               <label for="padding" class="st-components__checkbox-label">Padding</label>
             </div>
@@ -357,7 +352,7 @@
             <div class="st-components__property">
               <input type="checkbox" id="border" name="border" class="st-components__checkbox" checked />
               <label for="border" class="st-components__checkbox-label">Border</label>
-            </div> -->
+            </div>
           </fieldset>
         </form>
       </section>
@@ -379,6 +374,7 @@
     <script type="module" src="/src/js/sidebar.js"></script>
     <script type="module" src="/src/js/tabs.js"></script>
     <script type="module" src="/src/js/toc.js"></script>
+    <!-- <script type="module" src="/src/js/constructor.js"></script> -->
     <script type="module" src="/src/js/generique-constructor.js"></script>
     <script type="module" src="/src/js/interactivity.js"></script>
     <script type="module" src="/src/js/toc-observer.js"></script>

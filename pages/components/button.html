@@ -30,9 +30,7 @@
       <h1 class="st-components__title">Button</h1>
 
       <p class="st-components__description">
-        The Button is a foundational UI component in Stitch. Beyond showing how it looks, this page documents how it
-        behaves, how it adapts to themes, which tokens it uses, and which design decisions make it accessible and
-        reliable.
+        The Button is the most common interactive element in any interface. This page documents its variants, sizes, states, and the design decisions that make it accessible, theme-aware, and predictable across contexts.
       </p>
 
       <h2 id="preview" class="st-components__subtitle">Preview</h2>
@@ -193,11 +191,69 @@
         </article>
       </section>
 
+      <h2 id="do-dont" class="st-components__subtitle">Do and Don't</h2>
+
+      <section class="st-components__do-dont-container">
+        <article>
+          <h3 class="st-components__do-dont-title">
+            <i data-lucide="Check" class="st-components__do-dont-icon st-components__do-dont-icon--do"></i>
+            Do
+          </h3>
+          <ul class="st-components__list-do-dont">
+            <li class="st-components__item-do">
+              Use a button to trigger an action, not to navigate to another page, use a link for that
+            </li>
+            <li class="st-components__item-do">
+              Use type="button" explicitly to prevent accidental form submission
+            </li>
+            <li class="st-components__item-do">
+              Choose the variant that matches the importance of the action, one primary per view
+            </li>
+            <li class="st-components__item-do">
+              Use the disabled attribute when an action is temporarily unavailable
+            </li>
+            <li class="st-components__item-do">
+              Write labels that describe the action, ("Save changes" not "Click here")
+            </li>
+            <li class="st-components__item-do">
+              Use the danger variant only for genuinely destructive or irreversible actions
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h3 class="st-components__do-dont-title">
+            <i data-lucide="X" class="st-components__do-dont-icon st-components__do-dont-icon--dont"></i>
+            Don't
+          </h3>
+
+          <ul class="st-components__list-do-dont">
+            <li class="st-components__item-dont">
+              Don't use a button as a navigation link, that's what <code>&lt;a&gt;</code> is for
+            </li>
+            <li class="st-components__item-dont">
+              Don't place multiple primary buttons in the same view
+            </li>
+            <li class="st-components__item-dont">
+              Don't disable a button without giving the user a way to understand why
+            </li>
+            <li class="st-components__item-dont">
+              Don't add an aria-label that duplicates the visible text, it's redundant for screen readers
+            </li>
+            <li class="st-components__item-dont">
+              Don't use the danger variant for actions that are simply important but not destructive
+            </li>
+            <li class="st-components__item-dont">
+              Don't omit type="button" inside a form, the default type is submit
+            </li>
+          </ul>
+        </article>
+      </section>
+      
       <h2 id="get-yours" class="st-components__subtitle">Get yours</h2>
 
       <section class="st-components__get-yours-container" data-component="button">
-        <form class="st-components__form">
-          <fieldset class="st-components__fieldset">
+        <form class="st-components__get-yours-nav">
+          <fieldset class="st-components__get-yours-configuration">
             <legend class="st-components__legend">Configure your button</legend>
             <label for="variant" class="st-components__label">
               Variant&nbsp;
@@ -341,7 +397,7 @@
           <button type="button" class="interactive-elt st-btn st-btn--outline st-btn--medium">Outline</button>
         </article>
         <form class="st-components__interactive-properties">
-          <fieldset class="st-components__fieldset">
+          <fieldset class="st-components__fieldset-interactive">
             <legend class="st-components__legend">Toggle button properties</legend>
             <div class="st-components__property">
               <input type="checkbox" id="padding" name="padding" class="st-components__checkbox" checked />
