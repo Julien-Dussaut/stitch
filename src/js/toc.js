@@ -11,9 +11,15 @@ if (placeholder) {
     const link = document.createElement('a');
     link.classList.add('st-components__toc-link');
     link.setAttribute('id', `toc-${title.id}`);
-    
-    link.href = `${document.URL}#${title.id}`;
+    link.href = `#${title.id}`;
     link.textContent = title.textContent;
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const target = document.getElementById(title.id);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
     placeholder.appendChild(link);
   });
 }
